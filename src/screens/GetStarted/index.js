@@ -2,14 +2,14 @@ import { Text, View } from "native-base";
 import React from "react";
 import styles from "./styles";
 
-class Home extends React.Component {
+class GetStarted extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.text}>home</Text>
+        <Text style={styles.text}>get started</Text>
       </View>
     );
   }
 }
 
-export default Home;
+export default GetStarted;

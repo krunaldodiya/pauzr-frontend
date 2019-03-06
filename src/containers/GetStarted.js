@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import Home from "../components/Home";
+import GetStarted from "../screens/GetStarted";
 
 const mapStateToProps = state => ({
   loading: state.loading,
@@ -11,4 +11,4 @@ const mapDispatchToProps = dispatch => ({});
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(Home);
+)(GetStarted);
