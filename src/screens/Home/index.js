@@ -9,7 +9,7 @@ class Home extends React.Component {
     return (
       <View style={styles.container}>
         <Text style={styles.text}>home</Text>
-        <Button title='Continue' color='#FFC107' height='58' onPress={handler('push','Welcome')}></Button>
+        <Button title='Continue' color='#FFC107' height='58' onPress={()=>handler('push','Welcome')}></Button>
         <BottomNav></BottomNav>
       </View>
     );

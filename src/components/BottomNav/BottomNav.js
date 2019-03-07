@@ -22,7 +22,7 @@ export default class FooterTabsIconTextExample extends Component {
               <Text>Navigate</Text>
             </Button>
             <Button vertical>
-              <Icon name="person" onPress={handler('push','Profile')}/>
+              <Icon name="person" onPress={()=>handler('push','Profile')}/>
               <Text>Profile</Text>
             </Button>
           </FooterTab>

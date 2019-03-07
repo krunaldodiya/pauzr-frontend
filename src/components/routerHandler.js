@@ -1,5 +1,5 @@
 
-     const handler=(type,screen) => {
+     let handler=(type,screen) => {
        switch(type){
            case "push":
                 this.props.navigation.push(screen);
