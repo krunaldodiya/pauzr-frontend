@@ -1,6 +1,10 @@
 import { StyleSheet } from 'react-native';
 
 export default StyleSheet.create({
+  bottomNav: {
+    position: 'absolute',
+    bottom: 0
+  },
   spinner: {
     color: 'white'
   },

@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
 import { Container, Header, Content, Footer, FooterTab, Button, Icon, Text } from 'native-base';
 import handler from "../routerHandler";
+import styles from "./styles";
 export default class FooterTabsIconTextExample extends Component {
   render() {
     return (
-      <Container>
-        <Header />
-        <Content />
-        <Footer>
+      
+        <Footer style={styles.bottomNav}>
           <FooterTab>
             <Button vertical>
               <Icon name="apps" />
@@ -22,12 +21,12 @@ export default class FooterTabsIconTextExample extends Component {
               <Text>Navigate</Text>
             </Button>
             <Button vertical>
-              <Icon name="person" onPress={()=>handler('push','Profile')}/>
+              <Icon name="person" onPress={()=>{this.props.navigation.push("Welcome")}}/>
               <Text>Profile</Text>
             </Button>
           </FooterTab>
         </Footer>
-      </Container>
+     
     );
   }
 }

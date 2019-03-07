@@ -31,7 +31,7 @@ export default class Profile extends Component {
             </TouchableOpacity>
           </View>
         </View>
-        <BottomNav />
+        <BottomNav style={styles.bottomNav}/>
       </View>
     );
   }
