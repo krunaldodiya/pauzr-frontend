@@ -1,4 +1,4 @@
-import { Text, View } from 'native-base';
+import { Container, Text, View } from 'native-base';
 import { Button } from 'react-native';
 import React from 'react';
 import styles from './styles';
@@ -7,7 +7,7 @@ import BottomNav from '../../components/BottomNav/BottomNav';
 class Home extends React.Component {
   render() {
     return (
-      <View style={styles.container}>
+      <Container style={styles.container}>
         <Text style={styles.text}>home</Text>
         <Button
           title="Continue"
@@ -17,10 +17,9 @@ class Home extends React.Component {
             this.props.navigation.push('Profile');
           }}
         />
-        <View style={styles.bottom}>
-          <BottomNav></BottomNav>
-        </View>
-      </View>
+
+        <BottomNav style={styles.bottomNav} />
+      </Container>
     );
   }
 }

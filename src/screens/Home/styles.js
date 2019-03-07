@@ -6,7 +6,7 @@ export default StyleSheet.create({
     flex: 1,
     backgroundColor: 'purple',
     justifyContent: 'center',
-    alignItems:'center',
+    alignItems: 'center'
   },
 
   text: {
@@ -15,8 +15,9 @@ export default StyleSheet.create({
     color: 'pink',
     fontSize: 18
   },
-  bottom: {
+  bottomNav: {
     position: 'relative',
-    bottom: 0
+    bottom: 0,
+    flex: 1
   }
 });

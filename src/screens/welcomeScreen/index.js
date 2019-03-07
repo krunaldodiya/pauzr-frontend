@@ -29,9 +29,19 @@ export default class Welcome extends React.Component {
         }}
       >
         <StatusBar hidden />
-        <LottieView source={require('../../../assets/lottie/pauzrlogo3.json')} progress={this.state.totalProgress} />
+        <LottieView
+          source={require('../../../assets/lottie/pauzrlogo3.json')}
+          progress={this.state.totalProgress}
+        />
         <View style={styles.button}>
-          <Button title="Continue" color="#FFC107" height="58" onPress={()=>{this.props.navigation.push("TNC")}} />
+          <Button
+            title="Continue"
+            color="#FFC107"
+            height="58"
+            onPress={() => {
+              this.props.navigation.push('TNC');
+            }}
+          />
         </View>
       </View>
     );

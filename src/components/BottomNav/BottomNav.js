@@ -1,32 +1,21 @@
 import React, { Component } from 'react';
-import { Container, Header, Content, Footer, FooterTab, Button, Icon, Text } from 'native-base';
-import handler from '../routerHandler';
-import styles from './styles';
-export default class FooterTabsIconTextExample extends Component {
+import { Container, Footer, FooterTab, Button, Icon } from 'native-base';
+export default class BottomNav extends Component {
   render() {
     return (
-      <Footer style={styles.bottomNav}>
+      <Footer>
         <FooterTab>
-          <Button vertical>
+          <Button>
             <Icon name="apps" />
-            <Text>Apps</Text>
           </Button>
-          <Button vertical>
-            <Icon name="apps" />
-            <Text>Camera</Text>
+          <Button>
+            <Icon name="camera" />
           </Button>
-          <Button vertical active>
-            <Icon active name="apps" />
-            <Text>Navigate</Text>
+          <Button active>
+            <Icon active name="navigate" />
           </Button>
-          <Button vertical>
-            <Icon
-              name="person"
-              onPress={() => {
-                this.props.navigation.push('Welcome');
-              }}
-            />
-            <Text>Profile</Text>
+          <Button onpress={() => this.props.navigation.push('Profile')}>
+            <Icon name="person" />
           </Button>
         </FooterTab>
       </Footer>
