@@ -9,8 +9,15 @@ export default class AppIntro extends React.Component {
   render() {
     return (
       <View style={styles.parent}>
-        <Text style={{ color: '#ffffff' }}>This is the intro screen</Text>
-        <Button title="Continue" color="#43c6ac" height="58" onPress={()=>handler('push', 'Home')} />
+        <Text style={{ color: 'black' }}>This is the intro screen</Text>
+        <Button
+          title="Continue"
+          color="#43c6ac"
+          height="58"
+          onPress={() => {
+            this.props.navigation.push('Home');
+          }}
+        />
       </View>
     );
   }
