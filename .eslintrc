@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
     "extends": [
       "airbnb",
       "prettier",
@@ -28,3 +29,33 @@
     ]
   }
   
+=======
+  "extends": [
+    "airbnb",
+    "prettier",
+    "prettier/react"
+  ],
+  "rules": {
+    "react/jsx-filename-extension": [
+      1,
+      {
+        "extensions": [
+          ".js",
+          ".jsx"
+        ]
+      }
+    ],
+    "prettier/prettier": [
+      "error",
+      {
+        "trailingComma": "es5",
+        "singleQuote": true,
+        "printWidth": 100
+      }
+    ]
+  },
+  "plugins": [
+    "prettier"
+  ]
+}
+>>>>>>> 07982a66d1df08a7b9b3c92ebe45e536171b456e

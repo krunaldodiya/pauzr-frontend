@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
     "extends": ["airbnb", "prettier", "react-app", "plugin:prettier/recommended"],
     "plugins": ["prettier"],
     "rules": {
@@ -7,3 +8,13 @@
       "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }]
     }
   }
+=======
+  "extends": ["airbnb", "prettier", "react-app", "plugin:prettier/recommended"],
+  "plugins": ["prettier"],
+  "rules": {
+    "prettier/prettier": ["error"],
+    "jsx-a11y/href-no-hash": [0],
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }]
+  }
+}
+>>>>>>> 07982a66d1df08a7b9b3c92ebe45e536171b456e
