@@ -22,7 +22,7 @@ const getAppNavigator = initialRouteName => {
       Profile:{screen:Profile}
     },
     {
-      initialRouteName: "Home",
+      initialRouteName: "Welcome",
       defaultNavigationOptions: {
         header: null
       }
