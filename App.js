@@ -7,15 +7,22 @@ import GetStarted from "./src/containers/GetStarted";
 import Home from "./src/containers/Home";
 import { getInitialScreen } from "./src/libs/screen";
 import store from "./src/store";
-
+import TermsNConditions from "./src/screens/termsNConditions";
+import AppIntro from "./src/screens/appIntro/index";
+import Welcome from './src/screens/welcomeScreen/index';
+import Profile from './src/screens/Profile/Profile';
 const getAppNavigator = initialRouteName => {
   return createStackNavigator(
     {
-      Home: { screen: Home },
+      Welcome: { screen: Welcome },
+      TNC: { screen: TermsNConditions },
+      AppIntro: { screen: AppIntro },
       GetStarted: { screen: GetStarted },
+      Home: { screen: Home },
+      Profile:{screen:Profile}
     },
     {
-      initialRouteName,
+      initialRouteName: "Welcome",
       defaultNavigationOptions: {
         header: null
       }
