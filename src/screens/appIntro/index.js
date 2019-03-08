@@ -1,24 +1,41 @@
 import React from 'react';
-import { Text, Button, View } from 'react-native';
+import { Text} from 'react-native';
 import styles from './styles';
-import handler from '../../components/routerHandler';
+import { Container, Header, Content, Body, Button,Card , CardItem } from 'native-base';
 export default class AppIntro extends React.Component {
   constructor(props) {
     super(props);
   }
   render() {
     return (
-      <View style={styles.parent}>
-        <Text style={{ color: 'black' }}>This is the intro screen</Text>
+      <Container>
+        <Content style={styles.content}>
+        <Card style={styles.card}>
+            <CardItem header>
+              <Text>Card</Text>
+            </CardItem>
+            <CardItem>
+              <Body>
+                <Text>
+                  This screen is for showing App Intro
+                </Text>
+              </Body>
+            </CardItem>
+            <CardItem footer>
+              <Text>GeekyAnts</Text>
+            </CardItem>
+         </Card>
+        </Content>
         <Button
-          title="Continue"
-          color="#43c6ac"
-          height="58"
+          style={styles.button}
+          full
           onPress={() => {
             this.props.navigation.push('Home');
           }}
-        />
-      </View>
+        >
+          <Text style={{ fontSize: 18, fontWeight: 'bold', color: '#ffffff' }}>Continue</Text>
+        </Button>
+      </Container>
     );
   }
 }

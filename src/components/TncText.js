@@ -6,7 +6,7 @@ export default class TNCText extends React.Component {
   }
   render() {
     return (
-      <Text style={{fontSize:18}}>
+      <Text style={{ fontSize: 18 }}>
         Terms and Conditions agreements act as a legal contract between you (the company) who has
         the website or mobile app and the user who access your website and mobile app. Having a
         Terms and Conditions agreement is completely optional. No laws require you to have one. Not

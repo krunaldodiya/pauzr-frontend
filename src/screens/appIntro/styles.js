@@ -4,10 +4,15 @@ export default StyleSheet.create({
   spinner: {
     color: "white"
   },
-  parent:{
-    flex:1,
-    width:'100%',
-    justifyContent:'center',
-    alignItems:'center'
-}
+  content:{
+    padding:30,
+  },
+  card:{
+     borderWidth:10,
+     borderColor:"#7B1FA2",
+  },
+  button:{
+    backgroundColor:"#7B1FA2",
+    height:58,
+  }
 });

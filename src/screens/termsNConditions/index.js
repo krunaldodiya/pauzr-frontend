@@ -1,13 +1,5 @@
 import React from 'react';
-import {
-  Container,
-  Header,
-  Content,
-  Body,
-  CheckBox,
-  ListItem,
-  Button
-} from 'native-base';
+import { Container, Header, Content, Body, CheckBox, ListItem, Button } from 'native-base';
 import { Text } from 'react-native';
 import styles from './styles';
 import TNCText from '../../components/TncText';
@@ -34,15 +26,12 @@ export default class TermsNConditions extends React.Component {
     return (
       <Container style={styles.container}>
         <Header style={styles.header}>
-          
           <Body style={styles.body}>
             <Text style={styles.title}>Terms and Conditions</Text>
-           
           </Body>
-          
         </Header>
         <Content style={styles.content}>
-          <TNCText style={{fontSize:17}}></TNCText>
+          <TNCText />
         </Content>
         <ListItem>
           <CheckBox
@@ -55,13 +44,14 @@ export default class TermsNConditions extends React.Component {
             <Text>I accept the Terms and Conditions provided above.</Text>
           </Body>
         </ListItem>
-        <Button style={styles.button} full
+        <Button
+          style={styles.button}
+          full
           onPress={() => {
             this.props.navigation.push('AppIntro');
           }}
-          
-         >
-        <Text style={{fontSize:18,fontWeight:"bold",color:"#ffffff"}}>Continue</Text>
+        >
+          <Text style={{ fontSize: 18, fontWeight: 'bold', color: '#ffffff' }}>Continue</Text>
         </Button>
       </Container>
     );
