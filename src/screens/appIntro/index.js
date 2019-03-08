@@ -1,7 +1,7 @@
 import React from 'react';
-import { Text} from 'react-native';
+import { Text } from 'react-native';
 import styles from './styles';
-import { Container, Header, Content, Body, Button,Card , CardItem } from 'native-base';
+import { Container, Header, Content, Body, Button, Card, CardItem } from 'native-base';
 export default class AppIntro extends React.Component {
   constructor(props) {
     super(props);
@@ -10,21 +10,19 @@ export default class AppIntro extends React.Component {
     return (
       <Container>
         <Content style={styles.content}>
-        <Card style={styles.card}>
+          <Card style={styles.card}>
             <CardItem header>
               <Text>Card</Text>
             </CardItem>
             <CardItem>
               <Body>
-                <Text>
-                  This screen is for showing App Intro
-                </Text>
+                <Text>This screen is for showing App Intro</Text>
               </Body>
             </CardItem>
             <CardItem footer>
               <Text>GeekyAnts</Text>
             </CardItem>
-         </Card>
+          </Card>
         </Content>
         <Button
           style={styles.button}

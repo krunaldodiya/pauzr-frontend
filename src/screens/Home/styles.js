@@ -3,21 +3,17 @@ import theme from '../../libs/theme';
 
 export default StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: 'purple',
-    justifyContent: 'center',
-    alignItems: 'center'
+    backgroundColor: '#ffffff'
   },
-
-  text: {
-    fontWeight: '400',
-    fontFamily: theme.fonts.TitilliumWebSemiBold,
-    color: 'pink',
-    fontSize: 18
+  card: {
+    borderWidth: 10,
+    borderColor: '#7B1FA2'
   },
-  bottomNav: {
-    position: 'relative',
-    bottom: 0,
-    flex: 1
+  content: {
+    padding: 20
+  },
+  button: {
+    backgroundColor: '#7B1FA2',
+    height: 58
   }
 });

@@ -30,7 +30,7 @@ export default class Welcome extends React.Component {
       >
         <StatusBar hidden />
         <LottieView
-          source={require('../../../assets/lottie/pauzrlogo3.json')}
+          source={require('../../../assets/lottie/pauzrLogo2.json')}
           progress={this.state.totalProgress}
         />
         <View style={styles.button}>

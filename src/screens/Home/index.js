@@ -1,24 +1,38 @@
-import { Container, Text, View } from 'native-base';
-import { Button } from 'react-native';
+import { Container, Content, Body, Button, Card, CardItem, Header } from 'native-base';
 import React from 'react';
 import styles from './styles';
-import handler from '../../components/routerHandler';
+import { Text } from 'react-native';
 import BottomNav from '../../components/BottomNav/BottomNav';
 class Home extends React.Component {
   render() {
     return (
       <Container style={styles.container}>
-        <Text style={styles.text}>home</Text>
-        <Button
-          title="Continue"
-          color="#43c6ac"
-          height="58"
-          onPress={() => {
-            this.props.navigation.push('Profile');
-          }}
-        />
-
-        <BottomNav style={styles.bottomNav} />
+        <Header />
+        <Content style={styles.content}>
+          <Card style={styles.card}>
+            <CardItem header>
+              <Text>Card</Text>
+            </CardItem>
+            <CardItem>
+              <Body>
+                <Text>This screen is for showing Home</Text>
+              </Body>
+            </CardItem>
+            <CardItem footer>
+              <Text>GeekyAnts</Text>
+            </CardItem>
+          </Card>
+          <Button
+            style={styles.button}
+            full
+            onPress={() => {
+              this.props.navigation.push('Home');
+            }}
+          >
+            <Text style={{ fontSize: 18, fontWeight: 'bold', color: '#ffffff' }}>Continue</Text>
+          </Button>
+        </Content>
+        <BottomNav />
       </Container>
     );
   }
