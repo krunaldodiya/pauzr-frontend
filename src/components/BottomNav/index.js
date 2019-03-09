@@ -1,5 +1,6 @@
+import { Button, Footer, FooterTab, Icon } from 'native-base';
 import React, { Component } from 'react';
-import { Footer, FooterTab, Button, Icon } from 'native-base';
+
 export default class BottomNav extends Component {
   render() {
     return (
