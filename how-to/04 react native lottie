@@ -1,0 +1,10 @@
+android/app/build.gradle
+
+android{
+    ...
+    configurations.all {
+        resolutionStrategy {
+            force 'com.airbnb.android:lottie:2.5.5'
+        }
+    }
+}

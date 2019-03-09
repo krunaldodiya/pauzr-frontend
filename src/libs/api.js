@@ -13,4 +13,3 @@ const resource = {
 const { api, web } = resource;
 
 export { web, api };
-
