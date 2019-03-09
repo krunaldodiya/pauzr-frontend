@@ -1,26 +1,26 @@
 name [Krunal Dodiya]
 organization unit [KD]
-organization [clapoof]
+organization [Pauzr]
 city [Ahmedabad]
 state [Gujarat]
 country [IN]
 
-alias clapoof
-password clapoof@1987
-appId com.clapoof
+alias pauzr
+password pauzr@1987
+appId com.pauzr
 
 1) generate keystore
 ------------
-keytool -genkey -v -keystore clapoof.keystore -alias clapoof -keyalg RSA -keysize 2048 -validity 10000
+keytool -genkey -v -keystore pauzr.keystore -alias pauzr -keyalg RSA -keysize 2048 -validity 10000
 
-2) Place the clapoof.keystore file under the android/app directory in your project folder.
+2) Place the pauzr.keystore file under the android/app directory in your project folder.
 
 3) Edit the file ~/.gradle/gradle.properties or android/gradle.properties, and add the following (replace ***** with the correct keystore password, alias and key password),
 -------
-MYAPP_RELEASE_STORE_FILE=clapoof.keystore
-MYAPP_RELEASE_KEY_ALIAS=clapoof
-MYAPP_RELEASE_STORE_PASSWORD=clapoof@1987
-MYAPP_RELEASE_KEY_PASSWORD=clapoof@1987
+MYAPP_RELEASE_STORE_FILE=pauzr.keystore
+MYAPP_RELEASE_KEY_ALIAS=pauzr
+MYAPP_RELEASE_STORE_PASSWORD=pauzr@1987
+MYAPP_RELEASE_KEY_PASSWORD=pauzr@1987
 
 Edit the file android/app/build.gradle in your project folder, and add the signing config,
 ------------
@@ -47,22 +47,18 @@ android {
 
 also change versionCode & versionName in app/build.gradle everytime you upload to playstore
 
-
-add this lines in build.gradle
+change buildToolsVersion + compileSdkVersion in build.gradle
 ----------------------------------
-subprojects {
-    afterEvaluate {project ->
-        if (project.hasProperty("android")) {
-            android {
-                compileSdkVersion 27
-                buildToolsVersion '27.0.3'
-            }
-        }
-    }
-}
-
 buildscript {
     ...
+
+    ext {
+        buildToolsVersion = "28.0.3"
+        minSdkVersion = 16
+        compileSdkVersion = 28
+        targetSdkVersion = 27
+        supportLibVersion = "28.0.0"
+    }
 }
 
 $ cd android
