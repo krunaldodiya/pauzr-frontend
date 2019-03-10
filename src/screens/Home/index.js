@@ -2,7 +2,7 @@ import { Container, Content, Body, Button, Card, CardItem, Header } from 'native
 import React from 'react';
 import styles from './styles';
 import { Text } from 'react-native';
-import BottomNav from '../../components/BottomNav/BottomNav';
+import BottomNav from '../../components/BottomNav';
 class Home extends React.Component {
   render() {
     return (
