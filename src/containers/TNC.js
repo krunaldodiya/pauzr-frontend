@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import AppIntro from "../screens/appIntro/index";
+import TNCs from "../screens/TNC";
 
 const mapStateToProps = state => ({
   loading: state.loading,
@@ -11,4 +11,4 @@ const mapDispatchToProps = dispatch => ({});
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(AppIntro);
+)(TNC);

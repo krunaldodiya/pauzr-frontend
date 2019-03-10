@@ -7,10 +7,11 @@ import GetStarted from './src/containers/GetStarted';
 import Home from './src/containers/Home';
 import { getInitialScreen } from './src/libs/screen';
 import store from './src/store';
-import TermsNConditions from './src/screens/termsNConditions';
-import AppIntro from './src/screens/appIntro/index';
-import Welcome from './src/screens/welcomeScreen/index';
-import Profile from './src/screens/Profile/Profile';
+import TermsNConditions from './src/containers/TNC';
+import AppIntro from './src/containers/Intro';
+import Welcome from './src/containers/Welcome';
+import Profile from './src/containers/Profile';
+import LoginWebView from './src/screens/Login'
 const getAppNavigator = initialRouteName => {
   return createStackNavigator(
     {
@@ -19,10 +20,11 @@ const getAppNavigator = initialRouteName => {
       AppIntro: { screen: AppIntro },
       GetStarted: { screen: GetStarted },
       Home: { screen: Home },
-      Profile: { screen: Profile }
+      Profile: { screen: Profile },
+      LoginWebView:{screen:LoginWebView}
     },
     {
-      initialRouteName: 'Welcome',
+      initialRouteName: 'LoginWebView',
       defaultNavigationOptions: {
         header: null
       }

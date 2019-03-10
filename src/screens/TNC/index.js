@@ -2,8 +2,8 @@ import React from 'react';
 import { Container, Header, Content, Body, CheckBox, ListItem, Button } from 'native-base';
 import { Text } from 'react-native';
 import styles from './styles';
-import TNCText from '../../components/TncText';
-export default class TermsNConditions extends React.Component {
+import TNCText from '../../components/TNCText';
+export default class TNC extends React.Component {
   constructor(props) {
     super(props);
     this.state = {

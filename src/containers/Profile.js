@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import Profile from "../screens/Profile/Profile";
+import Profile from "../screens/Profile";
 
 const mapStateToProps = state => ({
   loading: state.loading,

@@ -2,7 +2,7 @@ import React from 'react';
 import { Text } from 'react-native';
 import styles from './styles';
 import { Container, Header, Content, Body, Button, Card, CardItem } from 'native-base';
-export default class AppIntro extends React.Component {
+export default class Intro extends React.Component {
   constructor(props) {
     super(props);
   }

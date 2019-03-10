@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import Welcome from "../screens/welcomeScreen/index";
+import AppIntro from "../screens/Intro";
 
 const mapStateToProps = state => ({
   loading: state.loading,
@@ -11,4 +11,4 @@ const mapDispatchToProps = dispatch => ({});
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(Welcome);
+)(Intro);

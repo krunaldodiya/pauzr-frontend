@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import TermsNConditions from "../screens/termsNConditions/index";
+import Welcome from "../screens/Welcome";
 
 const mapStateToProps = state => ({
   loading: state.loading,
@@ -11,4 +11,4 @@ const mapDispatchToProps = dispatch => ({});
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(TermsNConditions);
+)(Welcome);
