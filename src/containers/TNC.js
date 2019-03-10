@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import TNCs from "../screens/TNC";
+import TNC from "../screens/TNC";
 
 const mapStateToProps = state => ({
   loading: state.loading,

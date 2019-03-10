@@ -7,7 +7,7 @@ import GetStarted from './src/containers/GetStarted';
 import Home from './src/containers/Home';
 import { getInitialScreen } from './src/libs/screen';
 import store from './src/store';
-import TermsNConditions from './src/containers/TNC';
+import TNC from './src/containers/TNC';
 import AppIntro from './src/containers/Intro';
 import Welcome from './src/containers/Welcome';
 import Profile from './src/containers/Profile';
@@ -16,7 +16,7 @@ const getAppNavigator = initialRouteName => {
   return createStackNavigator(
     {
       Welcome: { screen: Welcome },
-      TNC: { screen: TermsNConditions },
+      TNC: { screen: TNC },
       AppIntro: { screen: AppIntro },
       GetStarted: { screen: GetStarted },
       Home: { screen: Home },
