@@ -5,7 +5,7 @@ export default class LoginWebView extends Component {
   render() {
     return (
       <WebView
-        source={{uri: 'http://'}}
+        source={{uri: 'http://www.pauzr.com/login/google'}}
         style={{marginTop: 20}}
       />
     );

@@ -1,6 +1,3 @@
-import { StyleSheet } from "react-native";
-import theme from "../../libs/theme";
+import { StyleSheet } from 'react-native';
 
-export default StyleSheet.create({
-  
-});
+export default StyleSheet.create({});
