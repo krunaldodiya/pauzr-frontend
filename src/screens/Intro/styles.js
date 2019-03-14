@@ -1,18 +1,25 @@
-import { StyleSheet } from "react-native";
+import { StyleSheet } from 'react-native';
+import theme from '../../libs/theme';
 
 export default StyleSheet.create({
-  spinner: {
-    color: "white"
+  mainContent: {
+    flex: 1
   },
-  content:{
-    padding:30,
+  image: {
+    width: 360,
+    height: '100%'
   },
-  card:{
-     borderWidth:10,
-     borderColor:"#7B1FA2",
+  text: {
+    color: 'white',
+    backgroundColor: 'black',
+    textAlign: 'center'
   },
-  button:{
-    backgroundColor:"#7B1FA2",
-    height:58,
+  title: {
+    color: 'white',
+    backgroundColor: 'black',
+    textAlign: 'center',
+    padding: 5,
+    fontSize: 18,
+    fontFamily: theme.fonts.TitilliumWebRegular
   }
 });

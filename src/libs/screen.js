@@ -3,13 +3,13 @@ const getInitialScreen = authUser => {
     const { status } = authUser;
 
     if (!status) {
-      return "ManageProfile";
+      return 'ManageProfile';
     }
 
-    return "Home";
+    return 'Home';
   }
 
-  return "GetStarted";
+  return 'Intro';
 };
 
 export { getInitialScreen };

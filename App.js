@@ -1,30 +1,21 @@
+import { StyleProvider } from 'native-base';
 import React from 'react';
 import { NetInfo } from 'react-native';
 import { createAppContainer, createStackNavigator } from 'react-navigation';
 import { Provider } from 'react-redux';
+import getTheme from './native-base-theme/components';
 import NoNetwork from './src/components/NoNetwork';
-import GetStarted from './src/containers/GetStarted';
-import Home from './src/containers/Home';
+import Intro from './src/containers/Intro';
 import { getInitialScreen } from './src/libs/screen';
 import store from './src/store';
-import TNC from './src/containers/TNC';
-import AppIntro from './src/containers/Intro';
-import Welcome from './src/containers/Welcome';
-import Profile from './src/containers/Profile';
-import LoginWebView from './src/screens/Login'
+
 const getAppNavigator = initialRouteName => {
   return createStackNavigator(
     {
-      Welcome: { screen: Welcome },
-      TNC: { screen: TNC },
-      AppIntro: { screen: AppIntro },
-      GetStarted: { screen: GetStarted },
-      Home: { screen: Home },
-      Profile: { screen: Profile },
-      LoginWebView:{screen:LoginWebView}
+      Intro: { screen: Intro }
     },
     {
-      initialRouteName: 'LoginWebView',
+      initialRouteName,
       defaultNavigationOptions: {
         header: null
       }
@@ -75,12 +66,14 @@ class App extends React.Component {
     const AppContainer = createAppContainer(AppNavigator);
 
     return (
-      <Provider store={store}>
-        <React.Fragment>
-          {noConnection && <NoNetwork />}
-          {hasConnection && initialized && <AppContainer />}
-        </React.Fragment>
-      </Provider>
+      <StyleProvider style={getTheme()}>
+        <Provider store={store}>
+          <React.Fragment>
+            {noConnection && <NoNetwork />}
+            {hasConnection && initialized && <AppContainer />}
+          </React.Fragment>
+        </Provider>
+      </StyleProvider>
     );
   }
 }

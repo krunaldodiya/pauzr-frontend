@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import AppIntro from "../screens/Intro";
+import Intro from "../screens/Intro";
 
 const mapStateToProps = state => ({
   loading: state.loading,
