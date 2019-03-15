@@ -1,14 +1,21 @@
 import { StyleSheet } from 'react-native';
-import theme from '../../libs/theme';
 
 export default StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#000'
+  spinner: {
+    color: 'white'
   },
-  text: {
-    color: '#fff',
-    fontFamily: theme.fonts.TitilliumWebRegular,
-    padding: 10
+  welcomeContainer: {
+    flex: 0.5,
+    marginTop: 20,
+    marginBottom: 20,
+    marginLeft: 20,
+    marginRight: 20,
+    justifyContent: 'flex-end',
+    alignItems: 'center',
+    color: '#ffffff'
+  },
+  button: {
+    position: 'absolute',
+    bottom: 100
   }
 });

@@ -55,7 +55,20 @@ class App extends React.Component {
       store.dispatch.network.networkChange({ connection });
     });
 
-    store.dispatch.auth.getAuthUser();
+    store.dispatch.auth
+      .getAuthUser()
+      .then(() => {
+        this.hideSplashScreen();
+      })
+      .catch(() => {
+        this.hideSplashScreen();
+      });
+  }
+
+  hideSplashScreen() {
+    setTimeout(() => {
+      store.dispatch.auth.setAuthUser({ init: true });
+    }, 5000);
   }
 
   render() {
