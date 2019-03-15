@@ -36,9 +36,21 @@ const getAppNavigator = initialRouteName => {
 class App extends React.Component {
   constructor(props) {
     super(props);
+
+    const { network, auth } = store.getState();
+
+    this.state = {
+      network,
+      auth
+    };
   }
 
-  componentWillMount() {
+  componentDidMount() {
+    store.subscribe(() => {
+      const { network, auth } = store.getState();
+      this.setState({ network, auth });
+    });
+
     NetInfo.addEventListener('connectionChange', connection => {
       store.dispatch.network.networkChange({ connection });
     });
@@ -47,11 +59,9 @@ class App extends React.Component {
   }
 
   render() {
-    const { network, auth } = store.getState();
+    const { network, auth } = this.state;
     const { connection } = network;
     const { authUser, init } = auth;
-
-    console.log(init);
 
     const noConnection = connection && connection.type === 'none';
     const hasConnection = connection && connection.type !== 'none';

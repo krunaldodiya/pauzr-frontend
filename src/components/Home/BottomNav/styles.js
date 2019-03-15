@@ -6,9 +6,9 @@ export default StyleSheet.create({
     color: '#607D8B',
     fontFamily: theme.fonts.TitilliumWebRegular
   },
-  footerContainer: { 
-    backgroundColor: 'transparent', 
-    height: 70 
+  footerContainer: {
+    backgroundColor: 'transparent',
+    height: 70
   },
   footer: {
     borderTopLeftRadius: 30,
