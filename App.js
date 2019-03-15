@@ -6,13 +6,17 @@ import { Provider } from 'react-redux';
 import getTheme from './native-base-theme/components';
 import NoNetwork from './src/components/NoNetwork';
 import Intro from './src/containers/Intro';
+import RequestOtp from './src/containers/RequestOtp';
+import VerifyOtp from './src/containers/VerifyOtp';
 import { getInitialScreen } from './src/libs/screen';
 import store from './src/store';
 
 const getAppNavigator = initialRouteName => {
   return createStackNavigator(
     {
-      Intro: { screen: Intro }
+      Intro: { screen: Intro },
+      RequestOtp: { screen: RequestOtp },
+      VerifyOtp: { screen: VerifyOtp },
     },
     {
       initialRouteName,

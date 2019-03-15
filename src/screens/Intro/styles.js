@@ -7,18 +7,20 @@ export default StyleSheet.create({
   },
   image: {
     width: 360,
-    height: '100%'
+    height: 360
   },
   text: {
     color: 'white',
-    backgroundColor: 'black',
-    textAlign: 'center'
+    backgroundColor: 'transparent',
+    textAlign: 'center',
+    padding: 20,
+    fontFamily: theme.fonts.TitilliumWebRegular
   },
   title: {
     color: 'white',
-    backgroundColor: 'black',
+    backgroundColor: 'transparent',
     textAlign: 'center',
-    padding: 5,
+    padding: 10,
     fontSize: 18,
     fontFamily: theme.fonts.TitilliumWebRegular
   }

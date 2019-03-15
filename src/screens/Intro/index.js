@@ -7,23 +7,23 @@ const slides = [
   {
     key: 'one',
     title: 'Title 1',
-    text: 'Description.\nSay something cool',
+    text: "I'm already out of descriptions\n\nLorem ipsum bla bla bla",
     image: require('../../../assets/images/Intro/1.jpg'),
-    backgroundColor: '#59b2ab'
+    backgroundColor: '#000'
   },
   {
     key: 'two',
     title: 'Title 2',
-    text: 'Other cool stuff',
+    text: "I'm already out of descriptions\n\nLorem ipsum bla bla bla",
     image: require('../../../assets/images/Intro/2.jpg'),
-    backgroundColor: '#febe29'
+    backgroundColor: '#000'
   },
   {
     key: 'three',
     title: 'Title 3',
     text: "I'm already out of descriptions\n\nLorem ipsum bla bla bla",
     image: require('../../../assets/images/Intro/3.jpg'),
-    backgroundColor: '#22bcb5'
+    backgroundColor: '#000'
   }
 ];
 
@@ -43,11 +43,11 @@ export default class Intro extends React.Component {
   };
 
   _onDone() {
-    console.log('done');
+    this.props.navigation.replace('RequestOtp');
   }
 
   _onSkip() {
-    console.log('skip');
+    this.props.navigation.replace('RequestOtp');
   }
 
   render() {
@@ -59,6 +59,7 @@ export default class Intro extends React.Component {
         onSkip={() => this._onSkip()}
         showSkipButton
         activeDotStyle={{ backgroundColor: 'red' }}
+        dotStyle={{ backgroundColor: 'white' }}
       />
     );
   }
