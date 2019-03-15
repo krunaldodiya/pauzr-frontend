@@ -27,7 +27,7 @@ const slides = [
   }
 ];
 
-export default class Intro extends React.Component {
+class Intro extends React.Component {
   constructor(props) {
     super(props);
   }
@@ -64,3 +64,5 @@ export default class Intro extends React.Component {
     );
   }
 }
+
+export default Intro;

@@ -1,25 +1,29 @@
-import { StyleProvider } from 'native-base';
 import React from 'react';
 import { NetInfo } from 'react-native';
 import { createAppContainer, createStackNavigator } from 'react-navigation';
 import { Provider } from 'react-redux';
-import getTheme from './native-base-theme/components';
+// components
 import NoNetwork from './src/components/NoNetwork';
+// containers
+import EditProfile from './src/containers/EditProfile';
 import Intro from './src/containers/Intro';
 import RequestOtp from './src/containers/RequestOtp';
+import Splash from './src/containers/Splash';
+// libs & services
 import VerifyOtp from './src/containers/VerifyOtp';
-import { getInitialScreen } from './src/libs/screen';
 import store from './src/store';
 
-const getAppNavigator = initialRouteName => {
+const getAppNavigator = () => {
   return createStackNavigator(
     {
+      Splash: { screen: Splash },
       Intro: { screen: Intro },
       RequestOtp: { screen: RequestOtp },
       VerifyOtp: { screen: VerifyOtp },
+      EditProfile: { screen: EditProfile }
     },
     {
-      initialRouteName,
+      initialRouteName: 'Splash',
       defaultNavigationOptions: {
         header: null
       }
@@ -31,53 +35,38 @@ class App extends React.Component {
   constructor(props) {
     super(props);
 
+    const { network } = store.getState();
+
     this.state = {
-      initialized: false,
-      netInfo: null
+      connection: network.connection
     };
   }
 
-  componentWillMount() {
-    NetInfo.addEventListener('connectionChange', netInfo => {
-      this.setState({ netInfo }, () => {
-        store.dispatch.network.networkChange({ connection: netInfo });
+  componentDidMount() {
+    NetInfo.addEventListener('connectionChange', connection => {
+      this.setState({ connection }, () => {
+        store.dispatch.network.networkChange({ connection });
+        store.dispatch.auth.getAuthUser();
       });
     });
   }
 
-  async componentDidMount() {
-    store.dispatch.auth
-      .getAuthUser()
-      .then(() => {
-        this.setState({ initialized: true });
-      })
-      .catch(() => {
-        this.setState({ initialized: true });
-      });
-  }
-
   render() {
-    const { initialized, netInfo } = this.state;
+    const { connection } = this.state;
 
-    const { auth } = store.getState();
-    const { authUser } = auth;
+    const noConnection = connection && connection.type === 'none';
+    const hasConnection = connection && connection.type !== 'none';
 
-    const noConnection = netInfo && netInfo.type === 'none';
-    const hasConnection = netInfo && netInfo.type !== 'none';
-
-    const initialRouteName = getInitialScreen(authUser);
-    const AppNavigator = getAppNavigator(initialRouteName);
+    const AppNavigator = getAppNavigator();
     const AppContainer = createAppContainer(AppNavigator);
 
     return (
-      <StyleProvider style={getTheme()}>
-        <Provider store={store}>
-          <React.Fragment>
-            {noConnection && <NoNetwork />}
-            {hasConnection && initialized && <AppContainer />}
-          </React.Fragment>
-        </Provider>
-      </StyleProvider>
+      <Provider store={store}>
+        <React.Fragment>
+          {noConnection && <NoNetwork />}
+          {hasConnection && <AppContainer />}
+        </React.Fragment>
+      </Provider>
     );
   }
 }

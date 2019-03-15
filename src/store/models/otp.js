@@ -45,10 +45,10 @@ export const otp = {
           });
 
           const { data } = response;
-          const { user, token } = data;
+          const { user, access_token } = data;
 
           dispatch.auth.setAuthUser({ authUser: user, errors: null });
-          await setAuthToken(token);
+          await setAuthToken(access_token);
 
           navigation.replace(getInitialScreen(user));
         } catch (error) {

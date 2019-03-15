@@ -3,7 +3,7 @@ const getInitialScreen = authUser => {
     const { status } = authUser;
 
     if (!status) {
-      return 'ManageProfile';
+      return 'EditProfile';
     }
 
     return 'Home';
