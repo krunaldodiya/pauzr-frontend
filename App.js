@@ -25,7 +25,7 @@ const getAppNavigator = initialRouteName => {
       EditProfile: { screen: EditProfile }
     },
     {
-      initialRouteName: 'Home',
+      initialRouteName,
       defaultNavigationOptions: {
         header: null
       }
@@ -48,7 +48,10 @@ class App extends React.Component {
   componentDidMount() {
     store.subscribe(() => {
       const { network, auth } = store.getState();
-      this.setState({ network, auth });
+
+      if (this.state.auth.init == false) {
+        this.setState({ network, auth });
+      }
     });
 
     NetInfo.addEventListener('connectionChange', connection => {
