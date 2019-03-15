@@ -51,6 +51,9 @@ class App extends React.Component {
     const { connection } = network;
     const { authUser, init } = auth;
 
+    console.log(init);
+    
+
     const noConnection = connection && connection.type === 'none';
     const hasConnection = connection && connection.type !== 'none';
 
