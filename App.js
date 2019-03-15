@@ -4,20 +4,20 @@ import { createAppContainer, createStackNavigator } from 'react-navigation';
 import { Provider } from 'react-redux';
 // components
 import NoNetwork from './src/components/NoNetwork';
+import Splash from './src/components/Splash';
 // containers
 import EditProfile from './src/containers/EditProfile';
 import Home from './src/containers/Home';
 import Intro from './src/containers/Intro';
 import RequestOtp from './src/containers/RequestOtp';
-import Splash from './src/containers/Splash';
 import VerifyOtp from './src/containers/VerifyOtp';
 // libs & services
+import { getInitialScreen } from './src/libs/screen';
 import store from './src/store';
 
-const getAppNavigator = () => {
+const getAppNavigator = initialRouteName => {
   return createStackNavigator(
     {
-      Splash: { screen: Splash },
       Home: { screen: Home },
       Intro: { screen: Intro },
       RequestOtp: { screen: RequestOtp },
@@ -25,7 +25,7 @@ const getAppNavigator = () => {
       EditProfile: { screen: EditProfile }
     },
     {
-      initialRouteName: 'Splash',
+      initialRouteName,
       defaultNavigationOptions: {
         header: null
       }
@@ -36,37 +36,34 @@ const getAppNavigator = () => {
 class App extends React.Component {
   constructor(props) {
     super(props);
-
-    const { network } = store.getState();
-
-    this.state = {
-      connection: network.connection
-    };
   }
 
-  componentDidMount() {
+  componentWillMount() {
     NetInfo.addEventListener('connectionChange', connection => {
-      this.setState({ connection }, () => {
-        store.dispatch.network.networkChange({ connection });
-        store.dispatch.auth.getAuthUser();
-      });
+      store.dispatch.network.networkChange({ connection });
     });
+
+    store.dispatch.auth.getAuthUser();
   }
 
   render() {
-    const { connection } = this.state;
+    const { network, auth } = store.getState();
+    const { connection } = network;
+    const { authUser, init } = auth;
 
     const noConnection = connection && connection.type === 'none';
     const hasConnection = connection && connection.type !== 'none';
 
-    const AppNavigator = getAppNavigator();
+    const initialRouteName = getInitialScreen(authUser);
+    const AppNavigator = getAppNavigator(initialRouteName);
     const AppContainer = createAppContainer(AppNavigator);
 
     return (
       <Provider store={store}>
         <React.Fragment>
+          {init === false && <Splash />}
           {noConnection && <NoNetwork />}
-          {hasConnection && <AppContainer />}
+          {hasConnection && init === true && <AppContainer />}
         </React.Fragment>
       </Provider>
     );
