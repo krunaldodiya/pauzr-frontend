@@ -25,7 +25,7 @@ const getAppNavigator = () => {
       EditProfile: { screen: EditProfile }
     },
     {
-      initialRouteName: 'Splash',
+      initialRouteName: 'Home',
       defaultNavigationOptions: {
         header: null
       }
