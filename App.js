@@ -6,17 +6,19 @@ import { Provider } from 'react-redux';
 import NoNetwork from './src/components/NoNetwork';
 // containers
 import EditProfile from './src/containers/EditProfile';
+import Home from './src/containers/Home';
 import Intro from './src/containers/Intro';
 import RequestOtp from './src/containers/RequestOtp';
 import Splash from './src/containers/Splash';
-// libs & services
 import VerifyOtp from './src/containers/VerifyOtp';
+// libs & services
 import store from './src/store';
 
 const getAppNavigator = () => {
   return createStackNavigator(
     {
       Splash: { screen: Splash },
+      Home: { screen: Home },
       Intro: { screen: Intro },
       RequestOtp: { screen: RequestOtp },
       VerifyOtp: { screen: VerifyOtp },
