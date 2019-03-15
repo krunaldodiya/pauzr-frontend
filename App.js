@@ -25,7 +25,7 @@ const getAppNavigator = initialRouteName => {
       EditProfile: { screen: EditProfile }
     },
     {
-      initialRouteName,
+      initialRouteName: 'Home',
       defaultNavigationOptions: {
         header: null
       }
@@ -52,7 +52,6 @@ class App extends React.Component {
     const { authUser, init } = auth;
 
     console.log(init);
-    
 
     const noConnection = connection && connection.type === 'none';
     const hasConnection = connection && connection.type !== 'none';

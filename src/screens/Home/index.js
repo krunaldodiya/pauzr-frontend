@@ -1,7 +1,8 @@
 import React from 'react';
 import { Text, View } from 'react-native';
 import styles from './styles';
-
+import { Container, Header, Content } from 'native-base';
+import BottomNav from '../../components/Home/BottomNav';
 class Home extends React.Component {
   constructor(props) {
     super(props);
@@ -9,9 +10,13 @@ class Home extends React.Component {
 
   render() {
     return (
-      <View style={styles.container}>
-        <Text style={styles.text}>Home Screen</Text>
-      </View>
+      <Container style={styles.container}>
+        <Header />
+        <Content>
+          <Text style={styles.text}>Home Screen</Text>
+        </Content>
+        <BottomNav />
+      </Container>
     );
   }
 }
