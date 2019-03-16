@@ -3,7 +3,7 @@ import React from "react";
 import { TouchableOpacity } from "react-native";
 import styles from "./styles";
 
-class Header extends React.Component {
+class EditProfileHeader extends React.Component {
   render() {
     const { auth, updateAuthUser, navigation } = this.props;
     const { authUser } = auth;
@@ -30,4 +30,4 @@ class Header extends React.Component {
   }
 }
 
-export default Header;
+export default EditProfileHeader;

@@ -3,6 +3,7 @@ import React from 'react';
 import { TextInput, TouchableOpacity, View } from 'react-native';
 import { TextInputMask } from 'react-native-masked-text';
 import { uploadAvatar } from '../../../../services';
+import Location from '../../../Location';
 import Switch from '../../../Switch';
 import styles from './styles';
 
@@ -11,6 +12,9 @@ const citiesList = require('../../../../../assets/js/cities.json');
 class EditProfileForm extends React.Component {
   constructor(props) {
     super(props);
+
+    const { authUser } = props.auth;
+    const { city, state } = authUser;
 
     this.state = {
       cities: [],

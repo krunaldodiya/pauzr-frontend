@@ -1,7 +1,7 @@
 import { Icon, Input, Text, View } from 'native-base';
 import React from 'react';
 import { ScrollView, TouchableOpacity } from 'react-native';
-import theme from '../../../../libs/theme';
+import theme from '../../libs/theme';
 import styles from './styles';
 
 const Location = props => {

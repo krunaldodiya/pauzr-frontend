@@ -1,7 +1,8 @@
-import React from "react";
-import { KeyboardAvoidingView, SafeAreaView } from "react-native";
-import Loader from "../../../components/Loader";
-import Header from "../../../components/User/Profile/EditProfileForm/header";
+import React from 'react';
+import { KeyboardAvoidingView, SafeAreaView } from 'react-native';
+import Loader from '../../../components/Loader';
+import EditProfileForm from '../../../components/User/Profile/EditProfileForm';
+import EditProfileHeader from '../../../components/User/Profile/EditProfileHeader';
 
 class EditProfile extends React.Component {
   constructor(props) {
@@ -33,11 +34,8 @@ class EditProfile extends React.Component {
           contentContainerStyle={{ flex: 1 }}
         >
           <Loader loading={loading.effects.auth.updateAuthUser} />
-          <Header {...this.props} />
-          <Content
-            {...this.props}
-            toggleKeyboardAvoidView={this.toggleKeyboardAvoidView}
-          />
+          <EditProfileHeader {...this.props} />
+          <EditProfileForm {...this.props} toggleKeyboardAvoidView={this.toggleKeyboardAvoidView} />
         </KeyboardAvoidingView>
       </SafeAreaView>
     );

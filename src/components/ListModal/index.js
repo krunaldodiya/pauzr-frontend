@@ -1,7 +1,7 @@
 import { Body, Header, Icon, Left, Right } from "native-base";
 import React from "react";
 import { Modal, Text, TouchableOpacity, View } from "react-native";
-import theme from "../../../libs/theme";
+import theme from "../../libs/theme";
 import styles from "./styles";
 
 export default class ListModal extends React.Component {
