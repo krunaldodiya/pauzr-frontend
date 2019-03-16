@@ -13,7 +13,7 @@ class Splash extends React.Component {
   componentDidMount() {
     Animated.timing(this.state.totalProgress, {
       toValue: 1,
-      duration: 5000,
+      duration: 2000,
       easing: Easing.linear
     }).start();
   }

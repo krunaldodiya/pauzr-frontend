@@ -71,7 +71,7 @@ class App extends React.Component {
   hideSplashScreen() {
     setTimeout(() => {
       store.dispatch.auth.setAuthUser({ init: true });
-    }, 5000);
+    }, 2000);
   }
 
   render() {

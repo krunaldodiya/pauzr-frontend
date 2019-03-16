@@ -1,12 +1,16 @@
-import { connect } from "react-redux";
-import EditProfile from "../screens/User/EditProfile";
+import { connect } from 'react-redux';
+import EditProfile from '../screens/User/EditProfile';
 
 const mapStateToProps = state => ({
   loading: state.loading,
-  auth: state.auth
+  auth: state.auth,
+  location: state.location
 });
 
-const mapDispatchToProps = dispatch => ({});
+const mapDispatchToProps = dispatch => ({
+  handleInput: dispatch.auth.handleInput,
+  getLocation: dispatch.location.getLocation
+});
 
 export default connect(
   mapStateToProps,

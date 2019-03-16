@@ -7,19 +7,9 @@ import Location from '../../../Location';
 import Switch from '../../../Switch';
 import styles from './styles';
 
-const citiesList = require('../../../../../assets/js/cities.json');
-
 class EditProfileForm extends React.Component {
   constructor(props) {
     super(props);
-
-    const { authUser } = props.auth;
-    const { city, state } = authUser;
-
-    this.state = {
-      cities: [],
-      selectedLocation: city && state ? `${city}, ${state}` : null
-    };
   }
 
   updateData = data => {
@@ -27,41 +17,6 @@ class EditProfileForm extends React.Component {
     const { authUser } = auth;
 
     handleInput({ authUser: { ...authUser, ...data } });
-  };
-
-  handleLocationChange = selectedLocation => {
-    this.setState({ selectedLocation });
-
-    if (selectedLocation.length > 2) {
-      const filteredCities = citiesList.filter(city => {
-        return city.name.match(new RegExp(`^${selectedLocation}`, 'gi'));
-      });
-
-      this.setState({ cities: filteredCities });
-    }
-  };
-
-  handleLocationClear = () => {
-    const authUser = { ...this.state.authUser, city: null, state: null };
-
-    this.setState({
-      selectedLocation: null,
-      authUser
-    });
-  };
-
-  handleLocationSelect = city => {
-    const authUser = {
-      ...this.state.authUser,
-      city: city.name,
-      state: city.state
-    };
-
-    this.setState({
-      cities: [],
-      selectedLocation: `${city.name}, ${city.state}`,
-      authUser
-    });
   };
 
   render() {
@@ -86,7 +41,7 @@ class EditProfileForm extends React.Component {
           >
             <Thumbnail
               source={{ uri: authUser.avatar }}
-              style={{ height: 90, width: 90, borderRadius: 90 }}
+              style={{ height: 90, width: 90, borderRadius: 90, backgroundColor: '#000' }}
             />
           </TouchableOpacity>
         </View>
@@ -113,13 +68,7 @@ class EditProfileForm extends React.Component {
         </View>
 
         <View style={styles.inputWrapper}>
-          <Location
-            {...this.props}
-            cities={cities}
-            handleLocationChange={this.handleLocationChange}
-            handleLocationClear={this.handleLocationClear}
-            handleLocationSelect={this.handleLocationSelect}
-          />
+          <Location {...this.props} />
         </View>
 
         <View style={styles.inputWrapper}>
