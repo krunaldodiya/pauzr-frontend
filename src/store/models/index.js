@@ -1,5 +1,5 @@
 export * from './auth';
-export * from './location';
+export * from './locations';
 export * from './network';
 export * from './otp';
 export * from './users';

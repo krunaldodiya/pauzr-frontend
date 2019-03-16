@@ -9,6 +9,7 @@ const resource = {
     me: `${httpUrl}/api/users/me`,
     requestOtp: `${httpUrl}/api/otp/request-otp`,
     verifyOtp: `${httpUrl}/api/otp/verify-otp`,
+    getLocations: `${httpUrl}/api/locations/list`,
   }
 };
 

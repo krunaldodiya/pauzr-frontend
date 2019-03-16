@@ -13,10 +13,6 @@ class EditProfile extends React.Component {
     };
   }
 
-  async componentWillMount() {
-    //
-  }
-
   toggleKeyboardAvoidView = avoidKeyboard => {
     this.setState({ avoidKeyboard });
   };
@@ -33,7 +29,7 @@ class EditProfile extends React.Component {
           style={{ flex: 1 }}
           contentContainerStyle={{ flex: 1 }}
         >
-          <Loader loading={loading.effects.auth.updateAuthUser} />
+          <Loader loading={loading.effects.locations.getLocations} />
           <EditProfileHeader {...this.props} />
           <EditProfileForm {...this.props} toggleKeyboardAvoidView={this.toggleKeyboardAvoidView} />
         </KeyboardAvoidingView>

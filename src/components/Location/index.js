@@ -1,79 +1,69 @@
-import { Icon, Input, Text, View } from 'native-base';
+import { Icon, Text, View } from 'native-base';
 import React from 'react';
-import { ScrollView, TouchableOpacity } from 'react-native';
-import theme from '../../libs/theme';
+import { ScrollView, TextInput, TouchableOpacity } from 'react-native';
 import styles from './styles';
 
 class Location extends React.Component {
-  componentWillMount() {
-    this.props.getLocation();
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      keywords: '',
+      editable: false
+    };
   }
 
-  handleLocationChange = selectedLocation => {
-    this.setState({ selectedLocation });
+  componentWillMount() {
+    this.props.getLocations();
+  }
 
-    if (selectedLocation.length > 2) {
-      const filteredCities = citiesList.filter(city => {
-        return city.name.match(new RegExp(`^${selectedLocation}`, 'gi'));
+  get filteredLocation() {
+    const { keywords } = this.state;
+    const { locations } = this.props;
+    const { list } = locations;
+
+    if (keywords.length > 2) {
+      return list.filter(location => {
+        return location.city.match(new RegExp(`^${keywords}`, 'gi'));
       });
-
-      this.setState({ cities: filteredCities });
     }
-  };
 
-  handleLocationClear = () => {
-    const authUser = { ...this.state.authUser, city: null, state: null };
+    return list;
+  }
 
-    this.setState({
-      selectedLocation: null,
-      authUser
-    });
-  };
+  handleLocationSelect(data) {
+    this.setState({ editable: false, keywords: data.city });
+  }
 
-  handleLocationSelect = city => {
-    const authUser = {
-      ...this.state.authUser,
-      city: city.name,
-      state: city.state
-    };
-
-    this.setState({
-      cities: [],
-      selectedLocation: `${city.name}, ${city.state}`,
-      authUser
-    });
-  };
+  handleLocationClear() {
+    this.setState({ editable: true, keywords: '' });
+    this.location.focus();
+  }
 
   render() {
-    const { auth, cities, selectedLocation } = this.props;
-
-    const { authUser, errors } = auth;
-    const { city, state } = authUser;
+    const { keywords, editable } = this.state;
 
     return (
-      <View style={{ flex: 1 }}>
+      <View style={styles.wrapper(false)}>
         <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
-          <Input
-            ref={c => (this.location = c)}
-            editable={!(city && state)}
-            placeholder={
-              errors && (errors.errors.city || errors.errors.state)
-                ? errors.errors.city[0] || errors.errors.state[0]
-                : 'Select a Location'
-            }
-            placeholderTextColor={errors ? '#e74c3c' : '#000'}
+          <TextInput
+            ref={ref => {
+              this.location = ref;
+            }}
+            editable={editable}
+            placeholder={'Select a city'}
+            placeholderTextColor={'#000'}
+            value={keywords}
             autoCorrect={false}
-            value={selectedLocation}
-            onChangeText={keywords => this.handleLocationChange(keywords)}
-            style={styles.input(false)}
+            onChangeText={keywords => this.setState({ keywords })}
+            style={styles.input}
           />
 
-          {city && (
+          {editable == false && (
             <TouchableOpacity
               style={{ paddingRight: 10, justifyContent: 'center' }}
               onPress={() => {
                 this.handleLocationClear();
-                this.location._root.focus();
               }}
             >
               <Icon type="MaterialIcons" name="cancel" style={{ color: '#3d3d3d', fontSize: 22 }} />
@@ -81,23 +71,23 @@ class Location extends React.Component {
           )}
         </View>
 
-        <ScrollView contentContainerStyle={{ flexGrow: 1 }} keyboardShouldPersistTaps="handled">
-          {cities.map(city => (
-            <Text
-              key={city.id}
-              autoCorrect={false}
-              style={{
-                color: '#000',
-                padding: 10,
-                fontFamily: theme.fonts.TitilliumWebRegular,
-                fontSize: 16
-              }}
-              onPress={() => this.handleLocationSelect(city)}
-            >
-              {`${city.name}, ${city.state}`}
-            </Text>
-          ))}
-        </ScrollView>
+        {editable == true && keywords.length > 2 && (
+          <ScrollView
+            contentContainerStyle={styles.suggestionWrapper}
+            keyboardShouldPersistTaps="handled"
+          >
+            {this.filteredLocation.map(location => (
+              <Text
+                key={location.id}
+                autoCorrect={false}
+                style={styles.suggestions}
+                onPress={() => this.handleLocationSelect(location)}
+              >
+                {`${location.city}, ${location.state}`}
+              </Text>
+            ))}
+          </ScrollView>
+        )}
       </View>
     );
   }

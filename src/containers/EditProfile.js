@@ -4,12 +4,12 @@ import EditProfile from '../screens/User/EditProfile';
 const mapStateToProps = state => ({
   loading: state.loading,
   auth: state.auth,
-  location: state.location
+  locations: state.locations
 });
 
 const mapDispatchToProps = dispatch => ({
   handleInput: dispatch.auth.handleInput,
-  getLocation: dispatch.location.getLocation
+  getLocations: dispatch.locations.getLocations
 });
 
 export default connect(
