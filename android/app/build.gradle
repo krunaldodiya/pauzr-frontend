@@ -151,6 +151,8 @@ android {
 }
 
 dependencies {
+    implementation project(':rn-fetch-blob')
+    implementation project(':react-native-image-crop-picker')
     implementation project(':react-native-gesture-handler')
     implementation project(':lottie-react-native')
     implementation fileTree(dir: "libs", include: ["*.jar"])
