@@ -15,6 +15,8 @@ import VerifyOtp from './src/containers/VerifyOtp';
 import { getInitialScreen } from './src/libs/screen';
 import store from './src/store';
 
+import Timer from './src/containers/Timer';
+
 const getAppNavigator = initialRouteName => {
   return createStackNavigator(
     {
@@ -22,10 +24,11 @@ const getAppNavigator = initialRouteName => {
       Intro: { screen: Intro },
       RequestOtp: { screen: RequestOtp },
       VerifyOtp: { screen: VerifyOtp },
-      EditProfile: { screen: EditProfile }
+      EditProfile: { screen: EditProfile },
+      Timer:{screen:Timer}
     },
     {
-      initialRouteName,
+      initialRouteName:"Timer",
       defaultNavigationOptions: {
         header: null
       }
