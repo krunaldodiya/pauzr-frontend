@@ -1,5 +1,5 @@
 import React from 'react';
-import { Animated,Text, View } from 'react-native';
+import { Animated, Text, View } from 'react-native';
 import styles from './styles';
 import { Container, Header, Content } from 'native-base';
 import BottomNav from '../../components/Home/BottomNav';
@@ -10,15 +10,17 @@ export default class Timer extends React.Component {
     
   }
   componentDidMount() {
-                       
+    
   }
   render() {
     return (
       <Container style={styles.container}>
-          <Header/>
-          <Content>
-            <TickTock playAnimationOnMount={true} duration ={5000}></TickTock>
-          </Content>
+        <Header />
+        <Content contentContainerStyle={styles.content}>
+          <TickTock playAnimationOnMount={true} duration={1000} style={styles.tickTock}  >
+            <Text style={styles.text}>The tickTock will be here</Text>
+          </TickTock>
+        </Content>
         <BottomNav />
       </Container>
     );
