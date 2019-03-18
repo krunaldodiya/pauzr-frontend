@@ -1,7 +1,7 @@
 package com.pauzr;
 
 import android.app.Application;
-
+import com.horcrux.svg.SvgPackage; 
 import com.facebook.react.ReactApplication;
 import com.RNFetchBlob.RNFetchBlobPackage;
 import com.reactnative.ivpusic.imagepicker.PickerPackage;
@@ -30,7 +30,8 @@ public class MainApplication extends Application implements ReactApplication {
             new RNFetchBlobPackage(),
             new PickerPackage(),
             new RNGestureHandlerPackage(),
-            new LottiePackage()
+            new LottiePackage(),
+            new SvgPackage()
       );
     }
 

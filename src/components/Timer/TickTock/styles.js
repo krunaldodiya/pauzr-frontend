@@ -10,5 +10,6 @@ export default StyleSheet.create({
     color: '#fff',
     fontFamily: theme.fonts.TitilliumWebRegular,
     padding: 10
-  }
+  },
+  
 });

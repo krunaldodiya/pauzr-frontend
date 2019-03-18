@@ -7,19 +7,21 @@ import TickTock from '../../components/Timer/TickTock';
 export default class Timer extends React.Component {
   constructor(props) {
     super(props);
-    
   }
-  componentDidMount() {
-    
-  }
+  componentDidMount() {}
   render() {
     return (
       <Container style={styles.container}>
-        <Header />
+        <Header style={styles.header} />
         <Content contentContainerStyle={styles.content}>
-          <TickTock playAnimationOnMount={true} duration={1000} style={styles.tickTock}  >
-            <Text style={styles.text}>The tickTock will be here</Text>
-          </TickTock>
+          <View style={styles.timerBox}>
+            <TickTock playAnimationOnMount={true} duration={10000} style={styles.tickTock} >
+            
+            </TickTock>
+            <View style={styles.innerCircle} >
+            <Text style={styles.timerText}>22</Text>
+            </View>
+          </View>
         </Content>
         <BottomNav />
       </Container>
