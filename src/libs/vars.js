@@ -1,5 +1,5 @@
-const httpUrlDev = 'https://www.pauzr.test';
-const wsUrlDev = 'ws://www.pauzr.test';
+const httpUrlDev = 'https://www.pauzr-backend.test';
+const wsUrlDev = 'ws://www.pauzr-backend.test';
 
 const httpUrlProd = 'https://www.pauzr.com';
 const wsUrlProd = 'ws://www.pauzr.com';

@@ -13,12 +13,17 @@ class EditProfile extends React.Component {
     };
   }
 
+  get isLoading() {
+    const { loading } = this.props;
+
+    return loading.effects.locations.getLocations || loading.effects.auth.updateAuthUser;
+  }
+
   toggleKeyboardAvoidView = avoidKeyboard => {
     this.setState({ avoidKeyboard });
   };
 
   render() {
-    const { loading } = this.props;
     const { avoidKeyboard } = this.state;
 
     return (
@@ -29,7 +34,7 @@ class EditProfile extends React.Component {
           style={{ flex: 1 }}
           contentContainerStyle={{ flex: 1 }}
         >
-          <Loader loading={loading.effects.locations.getLocations} />
+          <Loader loading={this.isLoading} />
           <EditProfileHeader {...this.props} />
           <EditProfileForm {...this.props} toggleKeyboardAvoidView={this.toggleKeyboardAvoidView} />
         </KeyboardAvoidingView>

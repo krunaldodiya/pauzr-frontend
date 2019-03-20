@@ -42,21 +42,27 @@ class Location extends React.Component {
 
   render() {
     const { keywords, editable } = this.state;
+    const { auth, toggleKeyboardAvoidView } = this.props;
+    const { errors } = auth;
 
     return (
-      <View style={styles.wrapper(false)}>
+      <View style={styles.wrapper(errors && errors.errors.location_id)}>
         <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
           <TextInput
+            onFocus={() => toggleKeyboardAvoidView(false)}
             ref={ref => {
               this.location = ref;
             }}
             editable={editable}
-            placeholder={'Select a city'}
-            placeholderTextColor={'#000'}
-            value={keywords}
+            placeholder={
+              errors && errors.errors.location_id ? errors.errors.location_id[0] : 'Select a city'
+            }
+            placeholderTextColor={errors && errors.errors.location_id ? '#e74c3c' : '#000'}
+            value={errors && errors.errors.location_id ? null : keywords}
             autoCorrect={false}
             onChangeText={keywords => this.setState({ keywords })}
-            style={styles.input}
+            style={styles.input(errors && errors.errors.location_id)}
+            autoCorrect={false}
           />
 
           {editable == false && (

@@ -90,8 +90,8 @@ class App extends React.Component {
       <Provider store={store}>
         <React.Fragment>
           {init === false && <Splash />}
-          {noConnection && <NoNetwork />}
-          {hasConnection && init === true && <AppContainer />}
+          {init === true && noConnection && <NoNetwork />}
+          {init === true && hasConnection && init === true && <AppContainer />}
         </React.Fragment>
       </Provider>
     );
