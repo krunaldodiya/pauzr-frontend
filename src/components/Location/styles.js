@@ -13,7 +13,7 @@ export default StyleSheet.create({
 
   input: errors => {
     return {
-      width: 200,
+      width: 220,
       padding: 5,
       paddingLeft: 20,
       color: '#000',

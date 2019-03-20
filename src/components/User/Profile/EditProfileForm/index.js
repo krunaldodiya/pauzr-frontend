@@ -21,20 +21,9 @@ class EditProfileForm extends React.Component {
     const { auth, toggleKeyboardAvoidView } = this.props;
     const { authUser, errors } = auth;
 
-    const options = { cropping: true, height: 480, width: 480 };
-
     return (
       <View style={styles.container}>
-        <View style={{ alignItems: 'center', marginTop: 30, marginBottom: 10 }}>
-          <Switch
-            width={250}
-            options={['Male', 'Female']}
-            selected={authUser.gender}
-            onChange={gender => this.updateData({ gender })}
-          />
-        </View>
-
-        <View style={styles.inputWrapper}>
+        <View style={{ alignItems: 'center', marginTop: 20, marginBottom: 0 }}>
           <TextInput
             onFocus={() => toggleKeyboardAvoidView(false)}
             placeholder={errors && errors.errors.name ? errors.errors.name[0] : 'Full Name'}
@@ -46,8 +35,13 @@ class EditProfileForm extends React.Component {
           />
         </View>
 
-        <View style={styles.inputWrapper}>
-          <Location {...this.props} />
+        <View style={{ alignItems: 'center', marginTop: 10, marginBottom: 10 }}>
+          <Switch
+            width={250}
+            options={['Male', 'Female']}
+            selected={authUser.gender}
+            onChange={gender => this.updateData({ gender })}
+          />
         </View>
 
         <View style={styles.inputWrapper}>
@@ -75,6 +69,10 @@ class EditProfileForm extends React.Component {
             onChangeText={dob => this.updateData({ dob })}
             style={styles.input(errors && errors.errors.dob)}
           />
+        </View>
+
+        <View style={styles.inputWrapper}>
+          <Location {...this.props} />
         </View>
       </View>
     );

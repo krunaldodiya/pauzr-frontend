@@ -7,9 +7,11 @@ class Location extends React.Component {
   constructor(props) {
     super(props);
 
+    const { location } = props.auth.authUser;
+
     this.state = {
-      keywords: '',
-      editable: false
+      keywords: location ? location.city : '',
+      editable: location ? false : true
     };
   }
 
@@ -31,13 +33,24 @@ class Location extends React.Component {
     return list;
   }
 
+  updateData(data) {
+    const { auth, handleInput } = this.props;
+    const { authUser } = auth;
+
+    handleInput({ authUser: { ...authUser, ...data } });
+  }
+
   handleLocationSelect(data) {
-    this.setState({ editable: false, keywords: data.city });
+    this.setState({ editable: false, keywords: data.city }, () => {
+      this.updateData({ location: data });
+    });
   }
 
   handleLocationClear() {
-    this.setState({ editable: true, keywords: '' });
-    this.location.focus();
+    this.setState({ editable: true, keywords: '' }, () => {
+      this.updateData({ location: null });
+      this.location.focus();
+    });
   }
 
   render() {
@@ -46,7 +59,7 @@ class Location extends React.Component {
     const { errors } = auth;
 
     return (
-      <View style={styles.wrapper(errors && errors.errors.location_id)}>
+      <View style={styles.wrapper(errors && errors.errors.location)}>
         <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
           <TextInput
             onFocus={() => toggleKeyboardAvoidView(false)}
@@ -55,13 +68,13 @@ class Location extends React.Component {
             }}
             editable={editable}
             placeholder={
-              errors && errors.errors.location_id ? errors.errors.location_id[0] : 'Select a city'
+              errors && errors.errors.location ? errors.errors.location[0] : 'Select a city'
             }
-            placeholderTextColor={errors && errors.errors.location_id ? '#e74c3c' : '#000'}
-            value={errors && errors.errors.location_id ? null : keywords}
+            placeholderTextColor={errors && errors.errors.location ? '#e74c3c' : '#000'}
+            value={errors && errors.errors.location ? null : keywords}
             autoCorrect={false}
             onChangeText={keywords => this.setState({ keywords })}
-            style={styles.input(errors && errors.errors.location_id)}
+            style={styles.input(errors && errors.errors.location)}
             autoCorrect={false}
           />
 
