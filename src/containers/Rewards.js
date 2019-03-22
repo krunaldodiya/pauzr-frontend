@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import Timer from '../screens/Timer';
+import Rewards from '../screens/Rewards';
 
 const mapStateToProps = state => ({
   loading: state.loading,
@@ -11,4 +11,4 @@ const mapDispatchToProps = dispatch => ({});
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(Timer);
+)(Rewards);

@@ -22,7 +22,7 @@ export default class Timer extends React.Component {
             </View>
           </View>
         </Content>
-        <BottomNav />
+        <BottomNav {...this.props} />
       </Container>
     );
   }
