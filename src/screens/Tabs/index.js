@@ -1,11 +1,13 @@
 import { Icon } from 'native-base';
 import React from 'react';
 import { createBottomTabNavigator } from 'react-navigation';
-import Home from '../Home';
-import Rewards from '../Rewards';
-import Timer from '../Timer';
+// screens
+import Home from '../../containers/Home';
+import Rewards from '../../containers/Rewards';
+import Timer from '../../containers/Timer';
+import AddButton from './AddButton';
 
-const AppTabNavigator = createBottomTabNavigator(
+const Tabs = createBottomTabNavigator(
   {
     Home: {
       screen: Home,
@@ -19,12 +21,16 @@ const AppTabNavigator = createBottomTabNavigator(
     },
     Timer: {
       screen: Timer,
-      navigationOptions: {
-        tabBarLabel: 'Home',
-        tabBarIcon: ({ tintColor }) => (
-          <Icon type="Entypo" size={24} name="lock" style={{ color: tintColor }} />
-        )
-      }
+      // navigationOptions: {
+      //   tabBarLabel: 'Home',
+      //   tabBarIcon: ({ tintColor }) => (
+      //     <Icon type="Entypo" size={24} name="lock" style={{ color: tintColor }} />
+      //   )
+      // },
+
+      navigationOptions: () => ({
+        tabBarButtonComponent: () => <AddButton />
+      })
     },
     Rewards: {
       screen: Rewards,
@@ -49,4 +55,4 @@ const AppTabNavigator = createBottomTabNavigator(
   }
 );
 
-export default AppTabNavigator;
+export default Tabs;
