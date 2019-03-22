@@ -11,6 +11,7 @@ import Home from './src/containers/Home';
 import Intro from './src/containers/Intro';
 import RequestOtp from './src/containers/RequestOtp';
 import Rewards from './src/containers/Rewards';
+import Tabs from './src/containers/Tabs';
 import Timer from './src/containers/Timer';
 import VerifyOtp from './src/containers/VerifyOtp';
 // libs & services
@@ -26,7 +27,8 @@ const getAppNavigator = initialRouteName => {
       VerifyOtp: { screen: VerifyOtp },
       EditProfile: { screen: EditProfile },
       Timer: { screen: Timer },
-      Rewards: { screen: Rewards }
+      Rewards: { screen: Rewards },
+      Tabs: { screen: Tabs }
     },
     {
       initialRouteName,

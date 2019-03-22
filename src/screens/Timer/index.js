@@ -1,7 +1,6 @@
 import { Container, Content, Header } from 'native-base';
 import React from 'react';
 import { Text, View } from 'react-native';
-import BottomNav from '../../components/Home/BottomNav';
 import TickTock from '../../components/Timer/TickTock';
 import styles from './styles';
 
@@ -22,7 +21,6 @@ export default class Timer extends React.Component {
             </View>
           </View>
         </Content>
-        <BottomNav {...this.props} />
       </Container>
     );
   }
