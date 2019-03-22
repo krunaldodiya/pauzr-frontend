@@ -1,11 +1,11 @@
-import { Icon } from 'native-base';
+import { Icon, View } from 'native-base';
 import React from 'react';
 import { createBottomTabNavigator } from 'react-navigation';
 // screens
 import Home from '../../containers/Home';
 import Rewards from '../../containers/Rewards';
 import Timer from '../../containers/Timer';
-import AddButton from './AddButton';
+import styles from './styles';
 
 const Tabs = createBottomTabNavigator(
   {
@@ -19,19 +19,20 @@ const Tabs = createBottomTabNavigator(
         )
       }
     },
+
     Timer: {
       screen: Timer,
-      // navigationOptions: {
-      //   tabBarLabel: 'Home',
-      //   tabBarIcon: ({ tintColor }) => (
-      //     <Icon type="Entypo" size={24} name="lock" style={{ color: tintColor }} />
-      //   )
-      // },
-
-      navigationOptions: () => ({
-        tabBarButtonComponent: () => <AddButton />
-      })
+      navigationOptions: {
+        title: 'Screen 3',
+        tabBarLabel: 'Home',
+        tabBarIcon: ({ tintColor }) => (
+          <View style={styles.bigBubble}>
+            <Icon name="pause" style={{ color: 'red', fontSize: 36, bottom: 5 }} />
+          </View>
+        )
+      }
     },
+
     Rewards: {
       screen: Rewards,
       navigationOptions: {

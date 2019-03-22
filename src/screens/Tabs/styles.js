@@ -7,9 +7,9 @@ export default StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: 'white',
+    fontSize: 36,
     height: bigBubbleSize,
     width: bigBubbleSize,
-    borderRadius: bigBubbleSize / 2,
-    top: -30
+    borderRadius: bigBubbleSize / 2
   }
 });
