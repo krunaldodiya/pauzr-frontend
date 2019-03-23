@@ -1,10 +1,6 @@
 import React from 'react';
 import { Animated, Easing } from 'react-native';
-<<<<<<< HEAD
 import Svg, { G, Path,Line,Circle } from 'react-native-svg';
-=======
-import Svg, { G, Path } from 'react-native-svg';
->>>>>>> master
 export default class TickTock extends React.Component {
   constructor(props) {
     super(props);

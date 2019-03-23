@@ -1,11 +1,6 @@
 import React from 'react';
-<<<<<<< HEAD
 import { Text, View} from 'react-native';
 
-=======
-import { Container, Content, Header } from 'native-base';
-import { Text, View } from 'react-native';
->>>>>>> master
 import TickTock from '../../components/Timer/TickTock';
 import styles from './styles';
 import Wave from '../../components/Timer/Wave'
