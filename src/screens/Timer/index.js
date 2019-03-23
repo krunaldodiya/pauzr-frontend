@@ -3,6 +3,7 @@ import { Text, View } from 'react-native';
 import TickTock from '../../components/Timer/TickTock';
 import Wave from '../../components/Timer/Wave';
 import styles from './styles';
+import { Container, Content } from 'native-base';
 
 export default class Timer extends React.Component {
   constructor(props) {
@@ -12,7 +13,6 @@ export default class Timer extends React.Component {
   render() {
     return (
       <Container style={styles.container}>
-        <Header style={styles.header} />
         <Content contentContainerStyle={styles.content}>
           <View style={styles.timerBox}>
             <TickTock playAnimationOnMount={true} duration={1200000} style={styles.tickTock} />
