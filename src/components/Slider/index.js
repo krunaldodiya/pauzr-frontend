@@ -14,7 +14,7 @@ const showSlider = (results, navigation) => {
       activeDotColor="white"
       autoplay
       autoplayTimeout={3}
-      width={480}
+      width={360}
     >
       {results.map(data => (
         <ImageBackground
