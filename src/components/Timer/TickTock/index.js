@@ -1,5 +1,6 @@
 import React from 'react';
 import { Animated, Easing } from 'react-native';
+import { View } from 'native-base';
 export default class TickTock extends React.Component {
   constructor(props) {
     super(props);
@@ -35,16 +36,17 @@ export default class TickTock extends React.Component {
       outputRange: ['0deg', '360deg']
     });
     return (
-      <Animated.View
-        style={{
-          ...this.props.style,
-          transform: [
-            {
-              rotate: spin
-            }
-          ] 
-        }}
-      >
+      <View />
+      // <Animated.View
+      //   style={{
+      //     ...this.props.style,
+      //     transform: [
+      //       {
+      //         rotate: spin
+      //       }
+      //     ]
+      //   }}
+      // >
     );
   }
 }
