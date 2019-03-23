@@ -15,7 +15,9 @@ const Tabs = createBottomTabNavigator(
         title: 'Screen 3',
         tabBarLabel: 'Home',
         tabBarIcon: ({ tintColor }) => (
-          <Icon type="Entypo" name="home" size={24} style={{ color: tintColor }} />
+          <View style={styles.home}>
+            <Icon type="Entypo" name="home" size={24} style={{ color: tintColor }} />
+          </View>
         )
       }
     },
@@ -27,7 +29,7 @@ const Tabs = createBottomTabNavigator(
         tabBarLabel: 'Home',
         tabBarIcon: ({ tintColor }) => (
           <View style={styles.bigBubble}>
-            <Icon name="pause" style={{ color: 'red', fontSize: 36, bottom: 5 }} />
+            <Icon name="pause" style={{ color: '#fff', fontSize: 30 }} />
           </View>
         )
       }
@@ -50,7 +52,16 @@ const Tabs = createBottomTabNavigator(
       activeTintColor: '#F8F8F8',
       inactiveTintColor: '#586589',
       style: {
-        backgroundColor: '#171F33'
+        height:60,
+        borderTopLeftRadius: 30,
+        borderTopRightRadius: 30,
+        backgroundColor: '#ffffff',
+        elevation: 1,
+        zIndex: 1,
+        display: 'flex',
+        borderColor:"green",
+        borderWidth:2,
+
       }
     }
   }
