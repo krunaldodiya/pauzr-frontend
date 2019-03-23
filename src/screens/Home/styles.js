@@ -4,7 +4,7 @@ import theme from '../../libs/theme';
 export default StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#000'
+    backgroundColor: '#ccc'
   },
   text: {
     color: '#fff',
