@@ -14,13 +14,12 @@ const showSlider = (results, navigation) => {
       activeDotColor="white"
       autoplay
       autoplayTimeout={3}
-      width={360}
     >
       {results.map(data => (
         <ImageBackground
           source={{ uri: data.image_url }}
           resizeMode="stretch"
-          style={{ flex: 1 }}
+          style={{ flex: 1, backgroundColor: '#000' }}
           key={data.id}
         >
           <View
