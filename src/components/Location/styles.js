@@ -11,13 +11,16 @@ export default StyleSheet.create({
     };
   },
 
-  input: {
-    width: 200,
-    padding: 5,
-    paddingLeft: 20,
-    color: '#000',
-    fontFamily: theme.fonts.TitilliumWebRegular,
-    fontSize: 14
+  input: errors => {
+    return {
+      width: 220,
+      padding: 5,
+      paddingLeft: 20,
+      color: '#000',
+      alignSelf: 'center',
+      fontFamily: theme.fonts.TitilliumWebRegular,
+      fontSize: 14
+    };
   },
 
   suggestionWrapper: {

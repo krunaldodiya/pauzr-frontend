@@ -1,19 +1,17 @@
 import { connect } from 'react-redux';
-import EditProfile from '../screens/User/EditProfile';
+import Rewards from '../screens/Rewards';
 
 const mapStateToProps = state => ({
   loading: state.loading,
   auth: state.auth,
-  locations: state.locations
+  drawer: state.drawer
 });
 
 const mapDispatchToProps = dispatch => ({
-  handleInput: dispatch.auth.handleInput,
-  updateAuthUser: dispatch.auth.updateAuthUser,
-  getLocations: dispatch.locations.getLocations
+  toggleDrawer: dispatch.drawer.toggleDrawer
 });
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(EditProfile);
+)(Rewards);

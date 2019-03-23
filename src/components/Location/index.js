@@ -7,9 +7,11 @@ class Location extends React.Component {
   constructor(props) {
     super(props);
 
+    const { location } = props.auth.authUser;
+
     this.state = {
-      keywords: '',
-      editable: false
+      keywords: location ? location.city : '',
+      editable: location ? false : true
     };
   }
 
@@ -31,32 +33,49 @@ class Location extends React.Component {
     return list;
   }
 
+  updateData(data) {
+    const { auth, handleInput } = this.props;
+    const { authUser } = auth;
+
+    handleInput({ authUser: { ...authUser, ...data } });
+  }
+
   handleLocationSelect(data) {
-    this.setState({ editable: false, keywords: data.city });
+    this.setState({ editable: false, keywords: data.city }, () => {
+      this.updateData({ location: data });
+    });
   }
 
   handleLocationClear() {
-    this.setState({ editable: true, keywords: '' });
-    this.location.focus();
+    this.setState({ editable: true, keywords: '' }, () => {
+      this.updateData({ location: null });
+      this.location.focus();
+    });
   }
 
   render() {
     const { keywords, editable } = this.state;
+    const { auth, toggleKeyboardAvoidView } = this.props;
+    const { errors } = auth;
 
     return (
-      <View style={styles.wrapper(false)}>
+      <View style={styles.wrapper(errors && errors.errors.location)}>
         <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
           <TextInput
+            onFocus={() => toggleKeyboardAvoidView(false)}
             ref={ref => {
               this.location = ref;
             }}
             editable={editable}
-            placeholder={'Select a city'}
-            placeholderTextColor={'#000'}
-            value={keywords}
+            placeholder={
+              errors && errors.errors.location ? errors.errors.location[0] : 'Select a city'
+            }
+            placeholderTextColor={errors && errors.errors.location ? '#e74c3c' : '#000'}
+            value={errors && errors.errors.location ? null : keywords}
             autoCorrect={false}
             onChangeText={keywords => this.setState({ keywords })}
-            style={styles.input}
+            style={styles.input(errors && errors.errors.location)}
+            autoCorrect={false}
           />
 
           {editable == false && (

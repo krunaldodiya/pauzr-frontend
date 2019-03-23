@@ -4,7 +4,7 @@ import { Text } from 'react-native';
 import SideDrawer from '../../components/SideDrawer';
 import styles from './styles';
 
-class Home extends React.Component {
+class Rewards extends React.Component {
   constructor(props) {
     super(props);
   }
@@ -14,7 +14,7 @@ class Home extends React.Component {
       <SideDrawer {...this.props}>
         <Container style={styles.container}>
           <Content>
-            <Text style={styles.text}>Home Screen</Text>
+            <Text style={styles.text}>Rewards Screen</Text>
           </Content>
         </Container>
       </SideDrawer>
@@ -22,4 +22,4 @@ class Home extends React.Component {
   }
 }
 
-export default Home;
+export default Rewards;

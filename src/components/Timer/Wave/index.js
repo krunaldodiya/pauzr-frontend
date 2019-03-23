@@ -19,7 +19,7 @@ class Wave extends React.PureComponent {
     this._animValues = [];
     this._animations = [];
     this._animated = animated || false;
-
+    
     for (let i = 0; i < this.state.waveParams.length; i++) {
       this._animValues.push(new Animated.Value(0));
     }

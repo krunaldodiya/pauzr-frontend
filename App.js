@@ -10,12 +10,13 @@ import EditProfile from './src/containers/EditProfile';
 import Home from './src/containers/Home';
 import Intro from './src/containers/Intro';
 import RequestOtp from './src/containers/RequestOtp';
+import Rewards from './src/containers/Rewards';
+import Tabs from './src/containers/Tabs';
+import Timer from './src/containers/Timer';
 import VerifyOtp from './src/containers/VerifyOtp';
 // libs & services
 import { getInitialScreen } from './src/libs/screen';
 import store from './src/store';
-
-import Timer from './src/containers/Timer';
 
 const getAppNavigator = initialRouteName => {
   return createStackNavigator(
@@ -25,7 +26,9 @@ const getAppNavigator = initialRouteName => {
       RequestOtp: { screen: RequestOtp },
       VerifyOtp: { screen: VerifyOtp },
       EditProfile: { screen: EditProfile },
-      Timer:{screen:Timer}
+      Timer: { screen: Timer },
+      Rewards: { screen: Rewards },
+      Tabs: { screen: Tabs }
     },
     {
       initialRouteName:"Timer",
@@ -93,8 +96,8 @@ class App extends React.Component {
       <Provider store={store}>
         <React.Fragment>
           {init === false && <Splash />}
-          {noConnection && <NoNetwork />}
-          {hasConnection && init === true && <AppContainer />}
+          {init === true && noConnection && <NoNetwork />}
+          {init === true && hasConnection && init === true && <AppContainer />}
         </React.Fragment>
       </Provider>
     );

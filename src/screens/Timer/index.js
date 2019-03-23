@@ -9,7 +9,7 @@ export default class Timer extends React.Component {
   constructor(props) {
     super(props);
   }
-  componentDidMount() {}
+
   render() {
     return (
       <Container style={styles.container}>

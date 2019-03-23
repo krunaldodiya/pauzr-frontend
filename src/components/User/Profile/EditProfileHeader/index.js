@@ -1,7 +1,7 @@
-import { Text, View } from "native-base";
-import React from "react";
-import { TouchableOpacity } from "react-native";
-import styles from "./styles";
+import { Text, View } from 'native-base';
+import React from 'react';
+import { TouchableOpacity } from 'react-native';
+import styles from './styles';
 
 class EditProfileHeader extends React.Component {
   render() {
@@ -10,7 +10,7 @@ class EditProfileHeader extends React.Component {
 
     return (
       <View style={styles.termsWrapper}>
-        <View style={{ justifyContent: "center" }}>
+        <View style={{ justifyContent: 'center' }}>
           <Text style={styles.termsHeader}>Edit Profile</Text>
         </View>
 

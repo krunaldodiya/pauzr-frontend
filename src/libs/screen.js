@@ -6,7 +6,7 @@ const getInitialScreen = authUser => {
       return 'EditProfile';
     }
 
-    return 'Home';
+    return 'Tabs';
   }
 
   return 'Intro';
