@@ -14,6 +14,7 @@ const showSlider = (results, navigation) => {
       activeDotColor="white"
       autoplay
       autoplayTimeout={3}
+      width={480}
     >
       {results.map(data => (
         <ImageBackground
@@ -82,21 +83,6 @@ const Slider = props => {
           <Spinner size="small" color="#000" />
         </View>
       )}
-
-      <Swiper
-        loadMinimal
-        loadMinimalSize={1}
-        loop
-        dotColor="gray"
-        activeDotColor="white"
-        autoplay
-        autoplayTimeout={3}
-        style={{ backgroundColor: 'red' }}
-      >
-        <View style={{ flex: 1, backgroundColor: 'red' }}>
-          <Text>hello</Text>
-        </View>
-      </Swiper>
 
       {loading.global == false && showSlider(results, navigation)}
     </View>
