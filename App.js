@@ -31,7 +31,7 @@ const getAppNavigator = initialRouteName => {
       Tabs: { screen: Tabs }
     },
     {
-      initialRouteName,
+      initialRouteName:"Home",
       defaultNavigationOptions: {
         header: null
       }
