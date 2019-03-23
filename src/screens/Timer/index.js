@@ -1,7 +1,11 @@
-import { Container, Content, Header } from 'native-base';
 import React from 'react';
+<<<<<<< HEAD
 import { Text, View} from 'react-native';
 
+=======
+import { Container, Content, Header } from 'native-base';
+import { Text, View } from 'react-native';
+>>>>>>> master
 import TickTock from '../../components/Timer/TickTock';
 import styles from './styles';
 import Wave from '../../components/Timer/Wave'
@@ -33,6 +37,10 @@ export default class Timer extends React.Component {
             <Text style={styles.timerText}>22</Text>
           </View>
         </Content>
+<<<<<<< HEAD
+       
+=======
+>>>>>>> 4d808aacf66f41ce3d897fef6f27deda4ed4e8f5
       </Container>
     );
   }
