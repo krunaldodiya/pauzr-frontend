@@ -1,11 +1,11 @@
 import { Icon, View } from 'native-base';
 import React from 'react';
 import { createBottomTabNavigator } from 'react-navigation';
+import MidBtn from '../../components/BottomNav/MidBtn';
 // screens
 import Home from '../../containers/Home';
 import Rewards from '../../containers/Rewards';
 import Timer from '../../containers/Timer';
-import styles from './styles';
 
 const Tabs = createBottomTabNavigator(
   {
@@ -14,57 +14,70 @@ const Tabs = createBottomTabNavigator(
       navigationOptions: {
         title: 'Screen 3',
         tabBarLabel: 'Home',
-        tabBarIcon: ({ tintColor }) => (
-          <View style={styles.home}>
-            <Icon type="Entypo" name="home" size={24} style={{ color: tintColor }} />
-          </View>
-        )
+        tabBarIcon: ({ tintColor }) => <Icon name="home" color={tintColor} size={34} />
       }
     },
 
     Timer: {
       screen: Timer,
-      navigationOptions: {
-        title: 'Screen 3',
-        tabBarLabel: 'Home',
-        tabBarIcon: ({ tintColor }) => (
-          <View style={styles.bigBubble}>
-            <Icon name="pause" style={{ color: '#fff', fontSize: 30 }} />
+      navigationOptions: ({ navigation }) => ({
+        tabBarIcon: () => (
+          <View
+            style={{
+              marginBottom: 60,
+              height: 75,
+              width: 75,
+              justifyContent: 'center',
+              alignItems: 'center'
+            }}
+          >
+            <MidBtn
+              navigation={navigation}
+              actionSize={30}
+              icon={<Icon name="pause" color="#ffffff" size={15} style={{ color: '#ffffff' }} />}
+              routes={[
+                {
+                  routeName: 'Timer',
+                  color: '#4CAF50',
+                  icon: <Icon name="home" color="#ffffff" size={15} style={{ color: '#ffffff' }} />
+                },
+                {
+                  routeName: 'Timer',
+                  color: '#E91E63',
+                  icon: <Icon name="home" color="#ffffff" size={15} style={{ color: '#ffffff' }} />
+                },
+                {
+                  routeName: 'Timer',
+                  color: '#673AB7',
+                  icon: <Icon name="home" color="#ffffff" size={15} style={{ color: '#ffffff' }} />
+                }
+              ]}
+            />
           </View>
         )
+      }),
+      params: {
+        navigationDisabled: false,
       }
     },
-
     Rewards: {
       screen: Rewards,
       navigationOptions: {
         tabBarLabel: 'Home',
-        tabBarIcon: ({ tintColor }) => (
-          <Icon type="Entypo" size={24} name="newsletter" style={{ color: tintColor }} />
-        )
+        tabBarIcon: ({ tintColor }) => <Icon name="heart" color={tintColor} size={34} />
       }
     }
   },
   {
-    initialRouteName: 'Timer',
+    initialRouteName: 'Home',
     tabBarOptions: {
       showLabel: false,
       activeTintColor: '#F8F8F8',
       inactiveTintColor: '#586589',
       style: {
-        height:60,
-        borderTopLeftRadius: 30,
-        borderTopRightRadius: 30,
-        backgroundColor: '#ffffff',
-        elevation: 1,
-        zIndex: 1,
-        display: 'flex',
-        borderColor:"green",
-        borderWidth:2,
-
+        height: 70
       }
     }
   }
 );
-
 export default Tabs;
