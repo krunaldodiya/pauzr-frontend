@@ -1,61 +1,10 @@
-import { Text, View } from 'native-base';
+import { Spinner, Text, View } from 'native-base';
 import React from 'react';
 import BestOffers from '../../components/BestOffers';
 import SideDrawer from '../../components/SideDrawer';
 import Slider from '../../components/Slider';
 import TopBrands from '../../components/TopBrands';
 import styles from './styles';
-
-const results = [
-  {
-    id: 1,
-    image_url: 'https://imgplaceholder.com/420x320/ff7f7f/333333/fa-image',
-    title: 'Title 1',
-    published_at_readable: '24',
-    backgroundColor: '#536DFE'
-  },
-  {
-    id: 1,
-    image_url: 'https://imgplaceholder.com/420x320/ff7f7f/333333/fa-image',
-    title: 'Title 2',
-    published_at_readable: '24',
-    backgroundColor: '#009688'
-  }
-];
-
-const top_brands = [
-  {
-    id: 1,
-    image_url: 'https://imgplaceholder.com/420x320/ff7f7f/333333/fa-image',
-    title: 'Title 1',
-    published_at_readable: '24',
-    backgroundColor: '#536DFE'
-  },
-  {
-    id: 1,
-    image_url: 'https://imgplaceholder.com/420x320/ff7f7f/333333/fa-image',
-    title: 'Title 2',
-    published_at_readable: '24',
-    backgroundColor: '#009688'
-  }
-];
-
-const best_offers = [
-  {
-    id: 1,
-    image_url: 'https://imgplaceholder.com/420x320/ff7f7f/333333/fa-image',
-    title: 'Title 1',
-    published_at_readable: '24',
-    backgroundColor: '#536DFE'
-  },
-  {
-    id: 1,
-    image_url: 'https://imgplaceholder.com/420x320/ff7f7f/333333/fa-image',
-    title: 'Title 2',
-    published_at_readable: '24',
-    backgroundColor: '#009688'
-  }
-];
 
 class Home extends React.Component {
   constructor(props) {
@@ -67,6 +16,17 @@ class Home extends React.Component {
   }
 
   render() {
+    const { home, loading } = this.props;
+    const { top_brands, best_offers, banners } = home;
+
+    if (loading.global) {
+      return (
+        <View style={{ flex: 1, justifyContent: 'center' }}>
+          <Spinner size="small" color="#000" />
+        </View>
+      );
+    }
+
     return (
       <SideDrawer {...this.props}>
         <View style={styles.greeting}>
@@ -74,10 +34,11 @@ class Home extends React.Component {
           <Text style={styles.greetingBig}>SHIVANSHU</Text>
         </View>
 
-        <Slider {...this.props} results={results} />
+        <Slider {...this.props} data={banners} />
 
         <View style={{ flex: 1, backgroundColor: '#000000' }}>
           <TopBrands data={top_brands} />
+
           <BestOffers data={best_offers} />
         </View>
       </SideDrawer>

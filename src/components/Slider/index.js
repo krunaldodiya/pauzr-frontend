@@ -1,11 +1,13 @@
-import { Spinner, Text, View } from 'native-base';
+import { Text, View } from 'native-base';
 import React from 'react';
 import { ImageBackground, TouchableOpacity } from 'react-native';
 import Swiper from 'react-native-swiper';
 import ChipView from '../../components/UIAssets/ChipView';
 import theme from '../../libs/theme';
 
-const showSlider = (results, navigation) => {
+const showSlider = (data, navigation) => {
+  console.log(data);
+
   return (
     <Swiper
       loadMinimal
@@ -17,12 +19,12 @@ const showSlider = (results, navigation) => {
       autoplayTimeout={3}
       style={{ backgroundColor: '#000000' }}
     >
-      {results.map(data => (
-        <ImageBackground resizeMode="stretch" style={{ flex: 1, padding: 13 }} key={data.id}>
+      {data.map(item => (
+        <ImageBackground resizeMode="stretch" style={{ flex: 1, padding: 13 }} key={item.id}>
           <ChipView
             height={100}
             width={'100%'}
-            backgroundColor={data.backgroundColor}
+            backgroundColor={'white'}
             color={'#ffffff'}
             chipConfig={{
               style: { borderRadius: 50 },
@@ -55,11 +57,11 @@ const showSlider = (results, navigation) => {
                   height: '60%'
                 }}
               >
-                {data.title}
+                {item.title}
               </Text>
 
               <TouchableOpacity
-                onPress={() => navigation.navigate('NewsDetailScreen', { news: data })}
+                onPress={() => navigation.navigate('NewsDetailScreen', { news: item })}
               >
                 <Text
                   style={{
@@ -81,7 +83,7 @@ const showSlider = (results, navigation) => {
                   marginTop: 5
                 }}
               >
-                {data.published_at_readable}
+                {item.published_at_readable}
               </Text>
             </View>
           </ChipView>
@@ -92,19 +94,9 @@ const showSlider = (results, navigation) => {
 };
 
 const Slider = props => {
-  const { results, navigation, loading } = props;
+  const { data, navigation, loading } = props;
 
-  return (
-    <View style={{ flex: 1 }}>
-      {loading.global == true && (
-        <View style={{ flex: 1, justifyContent: 'center' }}>
-          <Spinner size="small" color="#000" />
-        </View>
-      )}
-
-      {loading.global == false && showSlider(results, navigation)}
-    </View>
-  );
+  return <View style={{ flex: 1 }}>{loading.global == false && showSlider(data, navigation)}</View>;
 };
 
 export default Slider;

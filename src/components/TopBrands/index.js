@@ -6,6 +6,8 @@ import styles from './styles';
 
 class TopBrands extends React.Component {
   render() {
+    const { data } = this.props;
+
     return (
       <View>
         <View style={{ flexDirection: 'row', justifyContent: 'space-between', padding: 10 }}>
@@ -15,97 +17,33 @@ class TopBrands extends React.Component {
 
         <ScrollView horizontal showsHorizontalScrollIndicator>
           <View style={{ flexDirection: 'row', height: 150, paddingLeft: 13 }}>
-            <ChipView
-              height={150}
-              width={170}
-              backgroundColor={'#5D4037'}
-              color={'#ffffff'}
-              chipConfig={{
-                left: {
-                  bottom: 50,
-                  left: -10,
-                  size: 20,
-                  fallbackColor: '#000000'
-                },
-                right: {
-                  bottom: 50,
-                  right: -10,
-                  size: 20,
-                  fallbackColor: '#000000'
-                }
-              }}
-            >
-              <Text>Hello</Text>
-            </ChipView>
-
-            <ChipView
-              height={150}
-              width={170}
-              backgroundColor={'#607D8B'}
-              color={'#ffffff'}
-              chipConfig={{
-                left: {
-                  bottom: 50,
-                  left: -10,
-                  size: 20,
-                  fallbackColor: '#000000'
-                },
-                right: {
-                  bottom: 50,
-                  right: -10,
-                  size: 20,
-                  fallbackColor: '#000000'
-                }
-              }}
-            >
-              <Text>Hello</Text>
-            </ChipView>
-
-            <ChipView
-              height={150}
-              width={170}
-              backgroundColor={'#E64A19'}
-              color={'#ffffff'}
-              chipConfig={{
-                left: {
-                  bottom: 50,
-                  left: -10,
-                  size: 20,
-                  fallbackColor: '#000000'
-                },
-                right: {
-                  bottom: 50,
-                  right: -10,
-                  size: 20,
-                  fallbackColor: '#000000'
-                }
-              }}
-            >
-              <Text>Hello</Text>
-            </ChipView>
-
-            <ChipView
-              height={150}
-              width={170}
-              backgroundColor={'#FFC107'}
-              color={'#ffffff'}
-              chipConfig={{
-                left: {
-                  bottom: 50,
-                  left: -10,
-                  size: 20,
-                  fallbackColor: '#000000'
-                },
-                right: {
-                  bottom: 50,
-                  right: -10,
-                  size: 20,
-                  fallbackColor: '#000000'
-                }
-              }}
-            >
-              <Text>Hello</Text>
-            </ChipView>
+            {data.map(item => {
+              return (
+                <ChipView
+                  key={item.id}
+                  height={150}
+                  width={170}
+                  backgroundColor={'#5D4037'}
+                  color={'#ffffff'}
+                  chipConfig={{
+                    left: {
+                      bottom: 50,
+                      left: -10,
+                      size: 20,
+                      fallbackColor: '#000000'
+                    },
+                    right: {
+                      bottom: 50,
+                      right: -10,
+                      size: 20,
+                      fallbackColor: '#000000'
+                    }
+                  }}
+                >
+                  <Text>{item.title}</Text>
+                </ChipView>
+              );
+            })}
           </View>
         </ScrollView>
       </View>
