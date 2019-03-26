@@ -1,9 +1,9 @@
+import { Container, Content } from 'native-base';
 import React from 'react';
 import { Text, View } from 'react-native';
 import TickTock from '../../components/Timer/TickTock';
 import Wave from '../../components/Timer/Wave';
 import styles from './styles';
-import { Container, Content } from 'native-base';
 
 export default class Timer extends React.Component {
   constructor(props) {
