@@ -1,6 +1,11 @@
 import { Container, Content } from 'native-base';
 import React from 'react';
+<<<<<<< HEAD
 import { Text, View } from 'react-native';
+=======
+import { Text, View} from 'react-native';
+import {Container,Header,Content} from 'native-base';
+>>>>>>> features/home
 import TickTock from '../../components/Timer/TickTock';
 import Wave from '../../components/Timer/Wave';
 import styles from './styles';
@@ -32,6 +37,10 @@ export default class Timer extends React.Component {
             <Text style={styles.timerText}>22</Text>
           </View>
         </Content>
+<<<<<<< HEAD
+=======
+       
+>>>>>>> features/home
       </Container>
     );
   }

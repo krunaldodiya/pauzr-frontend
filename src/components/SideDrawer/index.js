@@ -1,6 +1,6 @@
 import { Container } from 'native-base';
 import React from 'react';
-import { Dimensions, SafeAreaView } from 'react-native';
+import { Dimensions, ScrollView } from 'react-native';
 import SideMenu from 'react-native-side-menu';
 import TopBar from '../TopBar';
 import Menu from './menu';
@@ -18,13 +18,12 @@ const SideDrawer = props => {
           toggleDrawer({ isOpen: false });
         }
       }}
+      style={{ flex: 1 }}
     >
-      <SafeAreaView style={{ flex: 1 }}>
-        <Container style={{ flex: 1 }}>
-          <TopBar {...props} />
-          {props.children}
-        </Container>
-      </SafeAreaView>
+      <TopBar {...props} />
+      <ScrollView style={{ flex: 1 }}>
+        <Container style={{ flex: 1 }}>{props.children}</Container>
+      </ScrollView>
     </SideMenu>
   );
 };
