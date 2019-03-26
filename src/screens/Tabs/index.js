@@ -57,7 +57,7 @@ const Tabs = createBottomTabNavigator(
         )
       }),
       params: {
-        navigationDisabled: false,
+        navigationDisabled: false
       }
     },
     Rewards: {

@@ -11,23 +11,21 @@ export default StyleSheet.create({
     fontFamily: theme.fonts.TitilliumWebRegular,
     padding: 10
   },
-  greeting:{
-    padding:20,
-    backgroundColor:"#000000",
+  greeting: {
+    padding: 20,
+    backgroundColor: '#000000'
   },
-  greetingSmall:{
-    fontFamily:theme.fonts.TitilliumWebSemiBold,
-    fontSize:16,
-    color:"#FFC107",
 
+  greetingSmall: {
+    fontFamily: theme.fonts.TitilliumWebSemiBold,
+    fontSize: 16,
+    color: '#FFC107'
   },
-  
-  greetingBig:{
-    fontFamily:theme.fonts.Digital7,
-    fontSize:24,
-    fontWeight:"bold",
-    color:"#FFFFFF",
-  
 
+  greetingBig: {
+    fontFamily: theme.fonts.Digital7,
+    fontSize: 24,
+    fontWeight: 'bold',
+    color: '#FFFFFF'
   }
 });
