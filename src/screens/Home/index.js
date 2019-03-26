@@ -1,4 +1,4 @@
-import { Spinner, Text, View } from 'native-base';
+import { Spinner, Text, View, Content } from 'native-base';
 import React from 'react';
 import BestOffers from '../../components/BestOffers';
 import SideDrawer from '../../components/SideDrawer';
@@ -16,8 +16,7 @@ class Home extends React.Component {
   }
 
   render() {
-    const { home, loading } = this.props;
-    const { top_brands, best_offers, banners } = home;
+    const { loading } = this.props;
 
     if (loading.global) {
       return (
@@ -29,18 +28,11 @@ class Home extends React.Component {
 
     return (
       <SideDrawer {...this.props}>
-        <View style={styles.greeting}>
-          <Text style={styles.greetingSmall}>Welcome</Text>
-          <Text style={styles.greetingBig}>SHIVANSHU</Text>
-        </View>
-
-        <Slider {...this.props} data={banners} />
-
-        <View style={{ flex: 1, backgroundColor: '#000000' }}>
-          <TopBrands data={top_brands} />
-
-          <BestOffers data={best_offers} />
-        </View>
+        <Content contentContainerStyle={{ flex: 1 }}>
+          <Slider {...this.props} />
+          <TopBrands {...this.props} />
+          <BestOffers {...this.props} />
+        </Content>
       </SideDrawer>
     );
   }

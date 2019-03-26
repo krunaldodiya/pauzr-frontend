@@ -1,62 +1,75 @@
-import { Text, View } from 'native-base';
+import { ScrollableTab, Tab, Tabs, Text, View } from 'native-base';
 import React from 'react';
-import { ScrollView, FlatList } from 'react-native-gesture-handler';
-import ChipView from '../../components/UIAssets/ChipView';
+import theme from '../../libs/theme';
 import styles from './styles';
 
 class BestOffers extends React.Component {
-  renderItem(data, navigation) {
-    return (
-      <View>
-        <Text>{data.title}</Text>
-      </View>
-    );
+  showData(data) {
+    return data.map(item => {
+      return (
+        <View style={{ margin: 5, padding: 5, borderWidth: 1, borderColor: 'white' }}>
+          <Text
+            numberOfLines={1}
+            style={{
+              color: 'white',
+              fontFamily: theme.fonts.TitilliumWebRegular,
+              fontSize: 14
+            }}
+          >
+            {item.name}
+          </Text>
+        </View>
+      );
+    });
+  }
+
+  showTabs(data) {
+    return data.map(item => {
+      return (
+        <Tab
+          heading={item.name}
+          key={item.id}
+          style={{ backgroundColor: '#000' }}
+          activeTabStyle={{ backgroundColor: '#000' }}
+          tabStyle={{ backgroundColor: '#000' }}
+        >
+          {this.showData(item.stores)}
+        </Tab>
+      );
+    });
   }
 
   render() {
-    const { data, navigation } = this.props;
+    const { home } = this.props;
+    const { best_offers } = home;
 
     return (
-      <View>
-        <View style={{ flexDirection: 'row', justifyContent: 'space-between', padding: 10 }}>
-          <Text style={[styles.text, { fontWeight: 'bold' }]}>Featured Category</Text>
+      <View style={{ flex: 1, backgroundColor: '#000' }}>
+        <View
+          style={{
+            flexDirection: 'row',
+            justifyContent: 'space-between',
+            padding: 10
+          }}
+        >
+          <Text style={[styles.text, { fontWeight: 'bold' }]}>Best Offers</Text>
           <Text style={[styles.text, { color: '#FFA000' }]}>View More</Text>
         </View>
 
-        <ScrollView horizontal showsHorizontalScrollIndicator>
-          <View style={{ flexDirection: 'row', height: 200, paddingLeft: 13 }}>
-            <ChipView
-              width={170}
-              height={150}
-              backgroundColor={'#388E3C'}
-              color={'#ffffff'}
-              chipConfig={{
-                left: {
-                  bottom: 50,
-                  left: -10,
-                  size: 20,
-                  fallbackColor: '#000000'
-                },
-                right: {
-                  bottom: 50,
-                  right: -10,
-                  size: 20,
-                  fallbackColor: '#000000'
-                }
-              }}
-            >
-              <Text>Hello</Text>
-            </ChipView>
-
-            <View>
-              <FlatList
-                data={data}
-                keyExtractor={(_, index) => index.toString()}
-                renderItem={data => this.renderItem(data, navigation)}
+        <View style={{ flex: 1, backgroundColor: '#000' }}>
+          <Tabs
+            style={{ backgroundColor: '#000', paddingHorizontal: 20 }}
+            tabsContainerStyle={{ backgroundColor: '#000' }}
+            renderTabBar={() => (
+              <ScrollableTab
+                style={{ backgroundColor: '#000' }}
+                tabsContainerStyle={{ backgroundColor: '#000' }}
               />
-            </View>
-          </View>
-        </ScrollView>
+            )}
+          >
+            {this.showTabs(best_offers)}
+          </Tabs>
+        </View>
       </View>
     );
   }

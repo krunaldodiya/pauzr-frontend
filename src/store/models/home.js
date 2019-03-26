@@ -6,7 +6,7 @@ export const home = {
   state: {
     banners: [],
     top_brands: [],
-    top_categories: []
+    best_offers: []
   },
   reducers: {
     setInitialData(state, payload) {
