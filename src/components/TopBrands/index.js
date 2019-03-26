@@ -1,15 +1,19 @@
 import { Text, View } from 'native-base';
 import React from 'react';
 import { Image, ScrollView } from 'react-native';
-import styles from './styles';
 import theme from '../../libs/theme';
+import { httpUrl } from '../../libs/vars';
+import styles from './styles';
 
 class TopBrands extends React.Component {
   showData(data) {
     return data.map(item => {
       return (
         <View style={{ margin: 5, padding: 5, borderWidth: 1, borderColor: 'white' }}>
-          <Image source={{ uri: item.url }} style={{ width: 150, flex: 1 }} />
+          <Image
+            source={{ uri: `${httpUrl}/storage/${item.url}` }}
+            style={{ width: 150, flex: 1 }}
+          />
           <Text
             numberOfLines={1}
             style={{
