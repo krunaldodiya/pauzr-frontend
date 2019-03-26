@@ -18,7 +18,6 @@ export default StyleSheet.create({
     height: 50,
     width: 50,
     borderRadius: 25,
-    elevation: 2,
     zIndex: 2
   },
   name: {

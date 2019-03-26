@@ -62,6 +62,10 @@ class Home extends React.Component {
     super(props);
   }
 
+  componentWillMount() {
+    this.props.getInitialData();
+  }
+
   render() {
     return (
       <SideDrawer {...this.props}>

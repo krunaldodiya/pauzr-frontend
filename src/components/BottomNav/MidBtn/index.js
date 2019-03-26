@@ -1,7 +1,6 @@
 import React from 'react';
 import { Animated, TouchableOpacity, Vibration, View } from 'react-native';
 
-
 export default class MidBtn extends React.Component {
   constructor(props) {
     super(props);
@@ -243,7 +242,3 @@ const Styles = {
     justifyContent: 'center'
   }
 };
-
-
-
-

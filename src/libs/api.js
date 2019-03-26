@@ -10,7 +10,8 @@ const resource = {
     requestOtp: `${httpUrl}/api/otp/request-otp`,
     verifyOtp: `${httpUrl}/api/otp/verify-otp`,
     getLocations: `${httpUrl}/api/locations/list`,
-    updateUserProfile: `${httpUrl}/api/users/update`
+    updateUserProfile: `${httpUrl}/api/users/update`,
+    getInitialDataForHome: `${httpUrl}/api/home/init`
   }
 };
 

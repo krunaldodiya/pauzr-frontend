@@ -4,7 +4,7 @@ export default StyleSheet.create({
   container: {
     padding: 6,
     flex: 1,
-    margin:"auto",
+    margin: 'auto'
   },
   cardCutLeft: {
     elevation: 3,
@@ -20,6 +20,6 @@ export default StyleSheet.create({
     flex: 1,
     elevation: 2,
     zIndex: 2,
-    padding:20,
+    padding: 20
   }
 });
