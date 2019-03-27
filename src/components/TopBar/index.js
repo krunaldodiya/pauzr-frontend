@@ -4,6 +4,8 @@ import { Image, TouchableOpacity, View } from 'react-native';
 import styles from './styles';
 
 const TopBar = props => {
+  console.log(props);
+
   return (
     <View style={styles.container}>
       <View style={{ flex: 1, alignItems: 'flex-start' }}>

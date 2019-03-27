@@ -7,7 +7,7 @@ class BestOffers extends React.Component {
   showData(data) {
     return data.map(item => {
       return (
-        <View style={{ margin: 5, padding: 5, borderWidth: 1, borderColor: 'white' }}>
+        <View style={{ margin: 5, padding: 5, borderWidth: 1, borderColor: 'white' }} key={item.id}>
           <Text
             numberOfLines={1}
             style={{
