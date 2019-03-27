@@ -11,7 +11,7 @@ class Rewards extends React.Component {
 
   render() {
     return (
-      <SideDrawer>
+      <SideDrawer {...this.props}>
         <Container style={styles.container}>
           <Content>
             <Text style={styles.text}>Rewards Screen</Text>

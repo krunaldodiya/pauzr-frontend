@@ -1,4 +1,4 @@
-import { Container, Content, View } from 'native-base';
+import { Container, Content, View, Text } from 'native-base';
 import React from 'react';
 import TickTock from '../../components/Timer/TickTock';
 import Wave from '../../components/Timer/Wave';
@@ -14,6 +14,7 @@ export default class Timer extends React.Component {
         <Content contentContainerStyle={styles.content}>
           <View style={styles.timerBox}>
             <TickTock playAnimationOnMount={true} duration={1200000} style={styles.tickTock} />
+
             <View style={styles.innerCircle}>
               <Wave
                 style={styles.waveBall}
