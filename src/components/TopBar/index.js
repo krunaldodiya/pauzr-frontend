@@ -7,7 +7,7 @@ const TopBar = props => {
   return (
     <View style={styles.container}>
       <View style={{ flex: 1, alignItems: 'flex-start' }}>
-        <TouchableOpacity onPress={() => props.toggleDrawer({ isOpen: true })}>
+        <TouchableOpacity onPress={() => props.navigation.push('Menu')}>
           <Icon
             type="MaterialIcons"
             color="#ffffff"

@@ -9,9 +9,9 @@ class TopBrands extends React.Component {
   showData(data) {
     return data.map(item => {
       return (
-        <View style={{ margin: 5, padding: 5, borderWidth: 1, borderColor: 'white' }}>
+        <View style={{ margin: 5, padding: 5, borderWidth: 1, borderColor: 'white' }} key={item.id}>
           <Image
-            source={{ uri: `${httpUrl}/storage/${item.url}` }}
+            source={{ uri: `${httpUrl}/storage/${item.logo}` }}
             style={{ width: 150, flex: 1 }}
           />
           <Text

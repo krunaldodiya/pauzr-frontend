@@ -12,6 +12,7 @@ export default class MidBtn extends React.Component {
       active: false
     };
   }
+
   actionPressed = route => {
     this.togglePressed();
 
@@ -149,6 +150,7 @@ export default class MidBtn extends React.Component {
       );
     });
   };
+  
   makeActivations = routes => {
     routes.forEach((v, i) => (this[`actionActivation_${i}`] = new Animated.Value(0)));
     this.setState({ totalCount: true });

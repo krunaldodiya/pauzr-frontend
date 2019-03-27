@@ -1,10 +1,9 @@
-import { Spinner, Text, View, Content } from 'native-base';
+import { Spinner, View } from 'native-base';
 import React from 'react';
 import BestOffers from '../../components/BestOffers';
 import SideDrawer from '../../components/SideDrawer';
 import Slider from '../../components/Slider';
 import TopBrands from '../../components/TopBrands';
-import styles from './styles';
 
 class Home extends React.Component {
   constructor(props) {
@@ -27,12 +26,10 @@ class Home extends React.Component {
     }
 
     return (
-      <SideDrawer {...this.props}>
-        <Content contentContainerStyle={{ flex: 1 }}>
-          <Slider {...this.props} />
-          <TopBrands {...this.props} />
-          <BestOffers {...this.props} />
-        </Content>
+      <SideDrawer>
+        <Slider {...this.props} />
+        <TopBrands {...this.props} />
+        <BestOffers {...this.props} />
       </SideDrawer>
     );
   }

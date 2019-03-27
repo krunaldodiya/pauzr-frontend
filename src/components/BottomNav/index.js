@@ -13,10 +13,10 @@ export default class BottomNav extends Component {
   }
   _handleProfile(isOpen) {
     if (isOpen) {
-      Alert.alert("if true");
-      this.setState({ isOpen: false, height: 400, });
-    } else if(!isOpen){
-      Alert.alert("if false");
+      Alert.alert('if true');
+      this.setState({ isOpen: false, height: 400 });
+    } else if (!isOpen) {
+      Alert.alert('if false');
       this.setState({ isOpen: true, height: 70 });
     }
   }
@@ -24,11 +24,14 @@ export default class BottomNav extends Component {
     const { navigation } = this.props;
 
     return (
-      <Footer  style={[styles.footerContainer,{
-        height:this.state.height,
-      }]}>
-        
-      </Footer>
+      <Footer
+        style={[
+          styles.footerContainer,
+          {
+            height: this.state.height
+          }
+        ]}
+      />
     );
   }
 }

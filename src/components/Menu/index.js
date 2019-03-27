@@ -11,14 +11,7 @@ Menu = props => {
   const { navigation } = props;
 
   return (
-    <SafeAreaView
-      style={{
-        flex: 1,
-        backgroundColor: '#fefefe',
-        borderRightWidth: 1,
-        borderRightColor: '#e6e6e6'
-      }}
-    >
+    <SafeAreaView style={styles.container}>
       <View style={{ flex: 1 }}>
         <View
           style={{

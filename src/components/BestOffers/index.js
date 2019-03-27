@@ -16,7 +16,7 @@ class BestOffers extends React.Component {
               fontSize: 14
             }}
           >
-            {item.name}
+            {item.description}
           </Text>
         </View>
       );
@@ -33,7 +33,7 @@ class BestOffers extends React.Component {
           activeTabStyle={{ backgroundColor: '#000' }}
           tabStyle={{ backgroundColor: '#000' }}
         >
-          {this.showData(item.stores)}
+          {this.showData(item.coupons)}
         </Tab>
       );
     });
