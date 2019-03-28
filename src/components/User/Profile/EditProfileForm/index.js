@@ -1,5 +1,5 @@
 import React from 'react';
-import { TextInput, View, ScrollView,Text } from 'react-native';
+import { TextInput, View, ScrollView,Text,Image } from 'react-native';
 import { TextInputMask } from 'react-native-masked-text';
 import Location from '../../../Location';
 import Switch from '../../../Switch';
@@ -23,11 +23,18 @@ class EditProfileForm extends React.Component {
     const { authUser, errors } = auth;
 
     return (
-      <ScrollView style={styles.container}>
-        <Form>
+      <ScrollView >
+        <View style={styles.container}>
+        <View style={{justifyContent:"center",flexDirection:"row",margin:20}}>
+      <Image
+            style={styles.avatar}
+            source={require('../../../../../assets/images/Profile/photo.jpg')}
+          />
+          </View>
+        <Form style={{flex:1}}>
           <View style={{ alignItems: 'center', marginTop: 20, marginBottom: 0 }}>
-            <Item floatingLabel>
-              <Label style={{ color: "errors && errors.errors.name ? '#e74c3c' : '#000'" }}>
+            <Item floatingLabel style={styles.item}>
+              <Label style={{ color: errors && errors.errors.name ? '#e74c3c' : '#000' }}>
                 {errors && errors.errors.name ? errors.errors.name[0] : 'Full Name'}
               </Label>
               <Input
@@ -40,7 +47,7 @@ class EditProfileForm extends React.Component {
           </View>
         </Form>
         <View style={{ alignItems: 'center', marginTop: 20, marginBottom: 0 }}>
-          <Item floatingLabel>
+          <Item floatingLabel style={styles.item}>
             <Label style={{ color: errors && errors.errors.name ? '#e74c3c' : '#000' }}>
               {errors && errors.errors.name ? errors.errors.name[0] : 'Email Address'}
             </Label>
@@ -52,24 +59,24 @@ class EditProfileForm extends React.Component {
             />
           </Item>
         </View>
-        <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
+        <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center',padding:40 }}>
           <View style={{ justifyContent: 'center', alignItems: 'center' }}>
-            <Icon name="home" />
-            <Text style={{ color: '#ccc', fontSize: 13 }}>Home</Text>
+            <Icon name="male" size={75} />
+            <Text style={{ color: '#ccc', fontSize: 13 }}>Male</Text>
           </View>
           <View style={{ justifyContent: 'center', alignItems: 'center' }}>
-            <Icon name="home" />
-            <Text style={{ color: '#ccc', fontSize: 13 }}>Home</Text>
+            <Icon name="female" size={75} />
+            <Text style={{ color: '#ccc', fontSize: 13 }}>Female</Text>
           </View>
           <View style={{ justifyContent: 'center', alignItems: 'center' }}>
-            <Icon name="home" />
-            <Text style={{ color: '#ccc', fontSize: 13 }}>Home</Text>
+            <Icon name="birthday" size={75} />
+            <Text style={{ color: '#ccc', fontSize: 13 }}>DOB</Text>
           </View>
         </View>
         <View style={{ alignItems: 'center', marginTop: 20, marginBottom: 0 }}>
-          <Item floatingLabel>
+          <Item floatingLabel style={styles.item}>
             <Label style={{ color: errors && errors.errors.name ? '#e74c3c' : '#000' }}>
-              {errors && errors.errors.name ? errors.errors.name[0] : 'Lorem Ipsum'}
+              {errors && errors.errors.name ? errors.errors.name[0] : 'Location'}
             </Label>
             <Input
               onFocus={() => toggleKeyboardAvoidView(false)}
@@ -80,7 +87,7 @@ class EditProfileForm extends React.Component {
           </Item>
         </View>
 
-        
+        </View>
       </ScrollView>
     );
   }

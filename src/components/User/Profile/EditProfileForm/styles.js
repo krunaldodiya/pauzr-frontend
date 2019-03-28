@@ -3,7 +3,20 @@ import theme from '../../../../libs/theme';
 
 export default StyleSheet.create({
   container: {
-    flex: 1
+    flex: 1,
+    justifyContent:"center",
+    padding:20,
+  },
+  item:{
+    borderBottomColor:"#7B1FA2",
+    padding:13,
+  },
+  avatar: {
+    height: 100,
+    width: 100,
+    borderRadius: 50,
+    zIndex: 2,
+    elevation:2,
   },
   termsWrapper: {
     justifyContent: 'space-between',

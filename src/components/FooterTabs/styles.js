@@ -2,15 +2,21 @@ import { StyleSheet } from 'react-native';
 
 export default StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: '#fefefe',
+    
+    backgroundColor: 'green',
     borderTopRightRadius: 30,
     borderTopLeftRadius: 30,
-    height: 70
+    
   }, 
   footer: {
-    justifyContent: 'space-between',
-    alignItems: 'center'
+    justifyContent: 'center',
+    alignItems: 'center',
+    height: 70,
+    borderTopRightRadius: 30,
+    borderTopLeftRadius: 30,
+    position:"absolute",
+    bottom:0,
+    width:"100%",
   },
   icon: {
     color: '#ffffff',
