@@ -4,7 +4,7 @@ import EditProfile from '../screens/User/EditProfile';
 const mapStateToProps = state => ({
   loading: state.loading,
   auth: state.auth,
-  users: state.users
+  home: state.home
 });
 
 const mapDispatchToProps = dispatch => ({
