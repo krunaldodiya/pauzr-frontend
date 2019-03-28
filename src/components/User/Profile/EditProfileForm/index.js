@@ -61,11 +61,11 @@ class EditProfileForm extends React.Component {
         </View>
         <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center',padding:40 }}>
           <View style={{ justifyContent: 'center', alignItems: 'center' }}>
-            <Icon name="male" size={75} />
+            <Icon name="male" size={75} style={{color:"#00BCD4"}} />
             <Text style={{ color: '#ccc', fontSize: 13 }}>Male</Text>
           </View>
           <View style={{ justifyContent: 'center', alignItems: 'center' }}>
-            <Icon name="female" size={75} />
+            <Icon name="female" size={75} style={{color:"#E91E63"}} />
             <Text style={{ color: '#ccc', fontSize: 13 }}>Female</Text>
           </View>
           <View style={{ justifyContent: 'center', alignItems: 'center' }}>
