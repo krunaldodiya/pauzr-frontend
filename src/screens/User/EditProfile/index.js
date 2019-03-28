@@ -20,7 +20,7 @@ class EditProfile extends React.Component {
   get isLoading() {
     const { loading } = this.props;
 
-    return loading.effects.users.getInitialData || loading.effects.auth.updateAuthUser;
+    return loading.global;
   }
 
   toggleKeyboardAvoidView = avoidKeyboard => {

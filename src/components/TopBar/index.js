@@ -4,10 +4,12 @@ import { Image, TouchableOpacity, View } from 'react-native';
 import styles from './styles';
 
 const TopBar = props => {
+  const { navigation } = props;
+
   return (
     <View style={styles.container}>
       <View style={{ flex: 1, alignItems: 'flex-start' }}>
-        <TouchableOpacity onPress={() => props.navigation.push('Menu')}>
+        <TouchableOpacity onPress={() => navigation.push('Menu')}>
           <Icon
             type="MaterialIcons"
             color="#ffffff"
@@ -18,7 +20,7 @@ const TopBar = props => {
       </View>
 
       <View style={{ flex: 1, alignItems: 'flex-end' }}>
-        <TouchableOpacity onPress={() => props.navigation.push('EditProfile')}>
+        <TouchableOpacity onPress={() => navigation.push('EditProfile')}>
           <Image
             style={styles.avatar}
             source={require('../../../assets/images/Profile/photo.jpg')}
