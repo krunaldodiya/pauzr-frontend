@@ -17,7 +17,7 @@ class Home extends React.Component {
   render() {
     const { loading } = this.props;
 
-    if (loading.global) {
+    if (loading.effects.home.getInitialData) {
       return (
         <View style={{ flex: 1, justifyContent: 'center' }}>
           <Spinner size="small" color="#000" />

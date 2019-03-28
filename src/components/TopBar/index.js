@@ -4,8 +4,6 @@ import { Image, TouchableOpacity, View } from 'react-native';
 import styles from './styles';
 
 const TopBar = props => {
-  console.log(props);
-
   return (
     <View style={styles.container}>
       <View style={{ flex: 1, alignItems: 'flex-start' }}>
@@ -20,7 +18,7 @@ const TopBar = props => {
       </View>
 
       <View style={{ flex: 1, alignItems: 'flex-end' }}>
-        <TouchableOpacity onPress={() => null}>
+        <TouchableOpacity onPress={() => props.navigation.push('EditProfile')}>
           <Image
             style={styles.avatar}
             source={require('../../../assets/images/Profile/photo.jpg')}

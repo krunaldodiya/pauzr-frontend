@@ -2,6 +2,7 @@ import React from 'react';
 import { TextInput, View } from 'react-native';
 import { TextInputMask } from 'react-native-masked-text';
 import Location from '../../../Location';
+import Profession from '../../../Profession';
 import Switch from '../../../Switch';
 import styles from './styles';
 
@@ -54,6 +55,10 @@ class EditProfileForm extends React.Component {
             onChangeText={email => this.updateData({ email })}
             style={styles.input(errors && errors.errors.email)}
           />
+        </View>
+
+        <View style={styles.inputWrapper}>
+          <Profession {...this.props} />
         </View>
 
         <View style={styles.inputWrapper}>

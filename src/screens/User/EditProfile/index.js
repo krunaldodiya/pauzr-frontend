@@ -13,10 +13,14 @@ class EditProfile extends React.Component {
     };
   }
 
+  componentWillMount() {
+    this.props.getInitialData();
+  }
+
   get isLoading() {
     const { loading } = this.props;
 
-    return loading.effects.locations.getLocations || loading.effects.auth.updateAuthUser;
+    return loading.effects.users.getInitialData || loading.effects.auth.updateAuthUser;
   }
 
   toggleKeyboardAvoidView = avoidKeyboard => {

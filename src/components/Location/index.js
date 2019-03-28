@@ -15,10 +15,6 @@ class Location extends React.Component {
     };
   }
 
-  componentWillMount() {
-    this.props.getLocations();
-  }
-
   get filteredLocation() {
     const { keywords } = this.state;
     const { locations } = this.props;

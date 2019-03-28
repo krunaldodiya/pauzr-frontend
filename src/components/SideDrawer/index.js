@@ -4,8 +4,6 @@ import FooterTabs from '../FooterTabs';
 import TopBar from '../TopBar';
 
 const SideDrawer = props => {
-  console.log(props);
-
   return (
     <Container style={{ flex: 1 }}>
       <TopBar {...props} />
