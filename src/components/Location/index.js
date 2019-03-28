@@ -17,16 +17,16 @@ class Location extends React.Component {
 
   get filteredLocation() {
     const { keywords } = this.state;
-    const { locations } = this.props;
-    const { list } = locations;
+    const { home } = this.props;
+    const { locations } = home;
 
     if (keywords.length > 2) {
-      return list.filter(location => {
+      return locations.filter(location => {
         return location.city.match(new RegExp(`^${keywords}`, 'gi'));
       });
     }
 
-    return list;
+    return locations;
   }
 
   updateData(data) {

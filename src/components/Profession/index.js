@@ -4,9 +4,9 @@ import theme from '../../libs/theme';
 
 class Profession extends React.Component {
   render() {
-    const { auth, users, handleInput } = this.props;
+    const { auth, home, handleInput } = this.props;
     const { authUser, errors } = auth;
-    const { professions } = users;
+    const { professions } = home;
 
     const selectedProfessionIndex = professions.findIndex(profession => {
       return profession.id == authUser.profession_id;
