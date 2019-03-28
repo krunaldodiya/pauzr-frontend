@@ -1,4 +1,4 @@
-import { Button, Footer, FooterTab, Text } from 'native-base';
+import { Button, Footer, FooterTab, Text,Icon} from 'native-base';
 import React, { Component } from 'react';
 import styles from './styles';
 import {Animated,Easing,View,Alert} from 'react-native';
