@@ -8,6 +8,10 @@ class Profession extends React.Component {
     const { authUser, errors } = auth;
     const { professions } = users;
 
+    const selectedProfessionIndex = professions.findIndex(profession => {
+      return profession.id == authUser.profession_id;
+    });
+
     return (
       <SearchableDropdown
         onItemSelect={profession =>
@@ -34,10 +38,10 @@ class Profession extends React.Component {
           borderWidth: 1,
           borderRadius: 5
         }}
-        itemTextStyle={{ color: '#222' }}
+        itemTextStyle={{ color: '#000' }}
         itemsContainerStyle={{ maxHeight: 140 }}
         items={professions}
-        defaultIndex={2}
+        defaultIndex={selectedProfessionIndex}
         placeholder={
           errors && errors.errors.profession ? errors.errors.profession[0] : 'Profession'
         }

@@ -9,6 +9,7 @@ export const auth = {
     errors: null,
     init: false
   },
+
   reducers: {
     handleInput(state, payload) {
       return { ...state, ...payload };
@@ -17,6 +18,7 @@ export const auth = {
       return { ...state, ...payload };
     }
   },
+
   effects: dispatch => {
     return {
       async getAuthUser(payload, rootState) {

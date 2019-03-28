@@ -46,6 +46,14 @@ class EditProfileForm extends React.Component {
         </View>
 
         <View style={styles.inputWrapper}>
+          <Profession {...this.props} />
+        </View>
+
+        <View style={styles.inputWrapper}>
+          <Location {...this.props} />
+        </View>
+
+        <View style={styles.inputWrapper}>
           <TextInput
             onFocus={() => toggleKeyboardAvoidView(false)}
             placeholder={errors && errors.errors.email ? errors.errors.email[0] : 'Email Address'}
@@ -55,10 +63,6 @@ class EditProfileForm extends React.Component {
             onChangeText={email => this.updateData({ email })}
             style={styles.input(errors && errors.errors.email)}
           />
-        </View>
-
-        <View style={styles.inputWrapper}>
-          <Profession {...this.props} />
         </View>
 
         <View style={styles.inputWrapper}>
@@ -74,10 +78,6 @@ class EditProfileForm extends React.Component {
             onChangeText={dob => this.updateData({ dob })}
             style={styles.input(errors && errors.errors.dob)}
           />
-        </View>
-
-        <View style={styles.inputWrapper}>
-          <Location {...this.props} />
         </View>
       </View>
     );

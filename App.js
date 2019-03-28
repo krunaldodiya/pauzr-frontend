@@ -52,6 +52,10 @@ class App extends React.Component {
     };
   }
 
+  componentWillMount() {
+    store.dispatch.users.getInitialData();
+  }
+
   componentDidMount() {
     store.subscribe(() => {
       const { network, auth } = store.getState();

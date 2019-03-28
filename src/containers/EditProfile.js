@@ -9,8 +9,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   handleInput: dispatch.auth.handleInput,
-  updateAuthUser: dispatch.auth.updateAuthUser,
-  getInitialData: dispatch.users.getInitialData
+  updateAuthUser: dispatch.auth.updateAuthUser
 });
 
 export default connect(
