@@ -82,17 +82,10 @@ class EditProfileForm extends React.Component {
             </View>
           </View>
           <View style={{ alignItems: 'center', marginTop: 20, marginBottom: 0 }}>
-            <Item floatingLabel style={styles.item}>
-              <Label style={{ color: errors && errors.errors.name ? '#e74c3c' : '#000' }}>
-                {errors && errors.errors.name ? errors.errors.name[0] : 'Location'}
-              </Label>
-              <Location {...this.props} />
-            </Item>
+            <Location {...this.props} />
           </View>
           <View style={{ alignItems: 'center', marginTop: 20, marginBottom: 0 }}>
-            <Item picker style={styles.item}>
-              <Profession {...this.props} />
-            </Item>
+            <Profession {...this.props} />
           </View>
         </View>
       </ScrollView>

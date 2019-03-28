@@ -4,6 +4,7 @@ import BestOffers from '../../components/BestOffers';
 import SideDrawer from '../../components/SideDrawer';
 import Slider from '../../components/Slider';
 import TopBrands from '../../components/TopBrands';
+import ChipView from '../../components/UIAssets/ChipView';
 
 class Home extends React.Component {
   constructor(props) {
@@ -28,6 +29,7 @@ class Home extends React.Component {
     return (
       <SideDrawer {...this.props}>
         <Slider {...this.props} />
+        
         <TopBrands {...this.props} />
         <BestOffers {...this.props} />
       </SideDrawer>

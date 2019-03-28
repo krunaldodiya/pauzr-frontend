@@ -13,7 +13,7 @@ export default class ChipView extends React.Component {
         source={this.props.backgroundImage}
         resizeMode="stretch"
         style={styles.container}
-        key={this.props.key}
+        key={this.props.slideKey}
       >
         <View
           style={[

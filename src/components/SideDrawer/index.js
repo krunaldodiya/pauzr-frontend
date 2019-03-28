@@ -10,7 +10,7 @@ const SideDrawer = props => {
     <Container style={{ flex: 1 }}>
       <TopBar {...props} />
       <Content contentContainerStyle={{ flex: 1,zIndex:1,elevation:1, }}>{props.children}
-      <FooterTabs  isOpen={false} style={{elevation:999,zIndex:999,}}/>
+      <FooterTabs  isOpen={false} style={{elevation:999,zIndex:999,}} {...this.props}/>
       </Content>
       </Container>
    

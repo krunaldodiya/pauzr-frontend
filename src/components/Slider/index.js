@@ -11,20 +11,23 @@ class Slider extends React.Component {
       return (
         <ChipView
           style={{ borderRadius: 13 }}
-          key={item.id}
+          height={200}
+          width={"100%"}
+          slideKey={item.id}
+          backgroundColor={"transparent"}
           backgroundImage={{ uri: `${httpUrl}/storage/${item.image}` }}
           chipConfig={{
-            style: { borderRadius: 20 },
+            style: { borderRadius: 25 },
             left: {
-              height: 80,
-              width: 80,
+              height: 50,
+              width: 50,
               fallbackColor: '#000000',
               bottom: 50,
               left: -25
             },
             right: {
-              height: 80,
-              width: 80,
+              height: 50,
+              width: 50,
               fallbackColor: '#000000',
               bottom: 50,
               right: -25

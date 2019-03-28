@@ -31,7 +31,7 @@ const getAppNavigator = initialRouteName => {
       Menu: { screen: Menu }
     },
     {
-      initialRouteName: 'EditProfile',
+      initialRouteName,
       // initialRouteName: 'Home',
       defaultNavigationOptions: {
         header: null

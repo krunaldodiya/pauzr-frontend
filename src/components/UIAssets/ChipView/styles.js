@@ -9,7 +9,8 @@ export default StyleSheet.create({
   cardCutLeft: {
     elevation: 3,
     zIndex: 3,
-    position: 'absolute'
+    position: 'absolute',
+    backgroundColor:"green",
   },
   cardCutRight: {
     elevation: 3,

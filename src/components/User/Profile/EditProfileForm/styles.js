@@ -16,7 +16,7 @@ export default StyleSheet.create({
     width: 100,
     borderRadius: 50,
     zIndex: 2,
-    elevation:2,
+  
   },
   termsWrapper: {
     justifyContent: 'space-between',
