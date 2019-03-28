@@ -26,7 +26,7 @@ class EditProfileForm extends React.Component {
     return (
       <ScrollView>
         <View style={styles.container}>
-          {/* <View style={{ justifyContent: 'center', flexDirection: 'row', margin: 20 }}>
+          <View style={{ justifyContent: 'center', flexDirection: 'row', margin: 20 }}>
             <Image
               style={styles.avatar}
               source={require('../../../../../assets/images/Profile/photo.jpg')}
@@ -93,7 +93,7 @@ class EditProfileForm extends React.Component {
             <Item picker style={styles.item}>
               <Profession {...this.props} />
             </Item>
-          </View> */}
+          </View>
         </View>
       </ScrollView>
     );
