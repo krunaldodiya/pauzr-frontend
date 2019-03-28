@@ -36,8 +36,7 @@ export default StyleSheet.create({
   inputGroup: errors => {
     return {
       borderColor: errors ? '#e74c3c' : 'black',
-      borderWidth: 1,
-      borderRadius: 10
+      
     };
   },
   inputWrapper: {
@@ -49,10 +48,7 @@ export default StyleSheet.create({
       alignSelf: 'center',
       borderColor: errors ? '#e74c3c' : 'gray',
       width: 250,
-      padding: 5,
-      borderWidth: 1,
-      borderRadius: 20,
-      paddingLeft: 20,
+      
       fontFamily: theme.fonts.TitilliumWebRegular,
       fontSize: 14
     };

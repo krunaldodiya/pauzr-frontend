@@ -1,10 +1,10 @@
 import React from 'react';
-import { TextInput, View } from 'react-native';
+import { TextInput, View, ScrollView,Text } from 'react-native';
 import { TextInputMask } from 'react-native-masked-text';
 import Location from '../../../Location';
-import Profession from '../../../Profession';
 import Switch from '../../../Switch';
 import styles from './styles';
+import { Form, Item, Input, Label, Icon } from 'native-base';
 
 class EditProfileForm extends React.Component {
   constructor(props) {
@@ -23,63 +23,65 @@ class EditProfileForm extends React.Component {
     const { authUser, errors } = auth;
 
     return (
-      <View style={styles.container}>
+      <ScrollView style={styles.container}>
+        <Form>
+          <View style={{ alignItems: 'center', marginTop: 20, marginBottom: 0 }}>
+            <Item floatingLabel>
+              <Label style={{ color: "errors && errors.errors.name ? '#e74c3c' : '#000'" }}>
+                {errors && errors.errors.name ? errors.errors.name[0] : 'Full Name'}
+              </Label>
+              <Input
+                onFocus={() => toggleKeyboardAvoidView(false)}
+                value={errors && errors.errors.name ? null : authUser.name}
+                onChangeText={name => this.updateData({ name })}
+                style={styles.input(errors && errors.errors.name)}
+              />
+            </Item>
+          </View>
+        </Form>
         <View style={{ alignItems: 'center', marginTop: 20, marginBottom: 0 }}>
-          <TextInput
-            onFocus={() => toggleKeyboardAvoidView(false)}
-            placeholder={errors && errors.errors.name ? errors.errors.name[0] : 'Full Name'}
-            placeholderTextColor={errors && errors.errors.name ? '#e74c3c' : '#000'}
-            autoCorrect={false}
-            value={errors && errors.errors.name ? null : authUser.name}
-            onChangeText={name => this.updateData({ name })}
-            style={styles.input(errors && errors.errors.name)}
-          />
+          <Item floatingLabel>
+            <Label style={{ color: errors && errors.errors.name ? '#e74c3c' : '#000' }}>
+              {errors && errors.errors.name ? errors.errors.name[0] : 'Email Address'}
+            </Label>
+            <Input
+              onFocus={() => toggleKeyboardAvoidView(false)}
+              value={errors && errors.errors.name ? null : authUser.name}
+              onChangeText={name => this.updateData({ name })}
+              style={styles.input(errors && errors.errors.name)}
+            />
+          </Item>
+        </View>
+        <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
+          <View style={{ justifyContent: 'center', alignItems: 'center' }}>
+            <Icon name="home" />
+            <Text style={{ color: '#ccc', fontSize: 13 }}>Home</Text>
+          </View>
+          <View style={{ justifyContent: 'center', alignItems: 'center' }}>
+            <Icon name="home" />
+            <Text style={{ color: '#ccc', fontSize: 13 }}>Home</Text>
+          </View>
+          <View style={{ justifyContent: 'center', alignItems: 'center' }}>
+            <Icon name="home" />
+            <Text style={{ color: '#ccc', fontSize: 13 }}>Home</Text>
+          </View>
+        </View>
+        <View style={{ alignItems: 'center', marginTop: 20, marginBottom: 0 }}>
+          <Item floatingLabel>
+            <Label style={{ color: errors && errors.errors.name ? '#e74c3c' : '#000' }}>
+              {errors && errors.errors.name ? errors.errors.name[0] : 'Lorem Ipsum'}
+            </Label>
+            <Input
+              onFocus={() => toggleKeyboardAvoidView(false)}
+              value={errors && errors.errors.name ? null : authUser.name}
+              onChangeText={name => this.updateData({ name })}
+              style={styles.input(errors && errors.errors.name)}
+            />
+          </Item>
         </View>
 
-        <View style={{ alignItems: 'center', marginTop: 10, marginBottom: 10 }}>
-          <Switch
-            width={250}
-            options={['Male', 'Female']}
-            selected={authUser.gender}
-            onChange={gender => this.updateData({ gender })}
-          />
-        </View>
-
-        <View style={styles.inputWrapper}>
-          <Profession {...this.props} />
-        </View>
-
-        <View style={styles.inputWrapper}>
-          <Location {...this.props} />
-        </View>
-
-        <View style={styles.inputWrapper}>
-          <TextInput
-            onFocus={() => toggleKeyboardAvoidView(false)}
-            placeholder={errors && errors.errors.email ? errors.errors.email[0] : 'Email Address'}
-            placeholderTextColor={errors && errors.errors.email ? '#e74c3c' : '#000'}
-            autoCorrect={false}
-            value={errors && errors.errors.email ? null : authUser.email}
-            onChangeText={email => this.updateData({ email })}
-            style={styles.input(errors && errors.errors.email)}
-          />
-        </View>
-
-        <View style={styles.inputWrapper}>
-          <TextInputMask
-            onFocus={() => toggleKeyboardAvoidView(false)}
-            refInput={ref => (this.myDateText = ref)}
-            type={'datetime'}
-            options={{ format: 'DD-MM-YYYY' }}
-            placeholder={errors && errors.errors.dob ? errors.errors.dob[0] : '25-08-1990'}
-            placeholderTextColor={errors ? '#e74c3c' : '#000'}
-            autoCorrect={false}
-            value={authUser.dob}
-            onChangeText={dob => this.updateData({ dob })}
-            style={styles.input(errors && errors.errors.dob)}
-          />
-        </View>
-      </View>
+        
+      </ScrollView>
     );
   }
 }

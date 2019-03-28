@@ -1,15 +1,20 @@
 import React from 'react';
-import { View } from 'react-native';
+import { View, ImageBackground } from 'react-native';
 import styles from './styles';
 
 export default class ChipView extends React.Component {
   constructor(props) {
     super(props);
-    let { height, width, backgroundColor, color, chipConfig } = this.props;
+    let { height, width, backgroundColor, color, chipConfig, backgroundImage, key } = this.props;
   }
   render() {
     return (
-      <View style={styles.container}>
+      <ImageBackground
+        source={this.props.backgroundImage}
+        resizeMode="stretch"
+        style={styles.container}
+        key={this.props.key}
+      >
         <View
           style={[
             styles.content,
@@ -18,7 +23,7 @@ export default class ChipView extends React.Component {
               width: this.props.width,
               backgroundColor: this.props.backgroundColor,
               color: this.props.color,
-              borderRadius: 13
+              
             },
             { ...this.props.style }
           ]}
@@ -46,13 +51,13 @@ export default class ChipView extends React.Component {
                 backgroundColor: this.props.chipConfig.left.fallbackColor,
                 bottom: this.props.chipConfig.right.bottom,
                 right: this.props.chipConfig.right.right,
-                borderRadius: 10
+                
               },
               { ...this.props.chipConfig.style }
             ]}
           />
         </View>
-      </View>
+      </ImageBackground>
     );
   }
 }

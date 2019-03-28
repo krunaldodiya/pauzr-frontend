@@ -4,16 +4,32 @@ import { ImageBackground, TouchableOpacity } from 'react-native';
 import Swiper from 'react-native-swiper';
 import theme from '../../libs/theme';
 import { httpUrl } from '../../libs/vars';
-
+import ChipView from '../../components/UIAssets/ChipView';
 class Slider extends React.Component {
   showData(data, navigation) {
     return data.map(item => {
       return (
-        <ImageBackground
-          source={{ uri: `${httpUrl}/storage/${item.image}` }}
-          resizeMode="stretch"
-          style={{ flex: 1, padding: 10 }}
+        <ChipView
+          style={{ borderRadius: 13 }}
           key={item.id}
+          backgroundImage={{ uri: `${httpUrl}/storage/${item.image}` }}
+          chipConfig={{
+            style: { borderRadius: 20 },
+            left: {
+              height: 80,
+              width: 80,
+              fallbackColor: '#000000',
+              bottom: 50,
+              left: -25
+            },
+            right: {
+              height: 80,
+              width: 80,
+              fallbackColor: '#000000',
+              bottom: 50,
+              right: -25
+            }
+          }}
         >
           <TouchableOpacity
             onPress={() => navigation.navigate('Test')}
@@ -33,7 +49,7 @@ class Slider extends React.Component {
               {item.title}
             </Text>
           </TouchableOpacity>
-        </ImageBackground>
+        </ChipView>
       );
     });
   }

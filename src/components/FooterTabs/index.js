@@ -14,7 +14,7 @@ export default class FooterTabs extends Component {
           <Button onPress={() => navigation.replace('Timer')}>
             <Text>Timer</Text>
           </Button>
-          <Button onPress={() => navigation.replace('Rewards')}>
+          <Button onPress={() => navigation.navigate('EditProfile')}>
             <Text>Rewards</Text>
           </Button>
         </FooterTab>
