@@ -7,9 +7,7 @@ export const users = {
   name: 'users',
 
   state: {
-    users: [],
-    locations: [],
-    professions: []
+    users: []
   },
 
   reducers: {
@@ -28,17 +26,6 @@ export const users = {
 
   effects: dispatch => {
     return {
-      async getInitialData(payload) {
-        try {
-          const { data } = await makeRequest(api.getInitialDataForUser);
-          const { locations, professions } = data;
-
-          dispatch.users.setInitialdata({ locations, professions });
-        } catch (error) {
-          console.log(error);
-        }
-      },
-
       async getUsers(payload, rootState) {
         const { page, filters } = payload;
 

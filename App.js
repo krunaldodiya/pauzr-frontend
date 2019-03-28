@@ -31,7 +31,7 @@ const getAppNavigator = initialRouteName => {
       Menu: { screen: Menu }
     },
     {
-      initialRouteName:"EditProfile",
+      initialRouteName: 'EditProfile',
       // initialRouteName: 'Home',
       defaultNavigationOptions: {
         header: null
@@ -53,7 +53,7 @@ class App extends React.Component {
   }
 
   componentWillMount() {
-    store.dispatch.users.getInitialData();
+    store.dispatch.home.getInitialData();
   }
 
   componentDidMount() {

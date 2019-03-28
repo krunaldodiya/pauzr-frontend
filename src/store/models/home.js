@@ -6,7 +6,9 @@ export const home = {
   state: {
     banners: [],
     top_brands: [],
-    best_offers: []
+    best_offers: [],
+    locations: [],
+    professions: []
   },
   reducers: {
     setInitialData(state, payload) {
@@ -18,7 +20,7 @@ export const home = {
     return {
       async getInitialData(payload, rootState) {
         try {
-          const { data } = await makeRequest(api.getInitialDataForHome, {});
+          const { data } = await makeRequest(api.getInitialData, {});
           dispatch.home.setInitialData(data);
         } catch (error) {
           console.log(error);
