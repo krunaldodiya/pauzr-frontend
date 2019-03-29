@@ -9,7 +9,7 @@ export default class FooterTabs extends Component {
     return (
       <Footer style={styles.container}>
         <FooterTab style={styles.footer}>
-          <Button style={styles.icon} onPress={() => navigation.replace('EditProfile')}>
+          <Button style={styles.icon} onPress={() => navigation.replace('Home')}>
             <Text>Home</Text>
           </Button>
 
