@@ -3,11 +3,9 @@ import { View, ImageBackground } from 'react-native';
 import styles from './styles';
 
 export default class ChipView extends React.Component {
-  constructor(props) {
-    super(props);
-    let { height, width, backgroundColor, color, chipConfig, backgroundImage, key } = this.props;
-  }
   render() {
+    console.log(this.props);
+
     return (
       <ImageBackground
         source={this.props.backgroundImage}
@@ -22,8 +20,7 @@ export default class ChipView extends React.Component {
               height: this.props.height,
               width: this.props.width,
               backgroundColor: this.props.backgroundColor,
-              color: this.props.color,
-              
+              color: this.props.color
             },
             { ...this.props.style }
           ]}
@@ -50,8 +47,7 @@ export default class ChipView extends React.Component {
                 width: this.props.chipConfig.right.size,
                 backgroundColor: this.props.chipConfig.left.fallbackColor,
                 bottom: this.props.chipConfig.right.bottom,
-                right: this.props.chipConfig.right.right,
-                
+                right: this.props.chipConfig.right.right
               },
               { ...this.props.chipConfig.style }
             ]}
