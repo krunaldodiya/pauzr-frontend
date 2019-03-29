@@ -1,6 +1,6 @@
 import { Container, Content } from 'native-base';
 import React from 'react';
-import { Text } from 'react-native';
+import LeaderBoard from '../../components/LeaderBoard';
 import SideDrawer from '../../components/SideDrawer';
 import styles from './styles';
 
@@ -14,7 +14,7 @@ class Rewards extends React.Component {
       <SideDrawer {...this.props}>
         <Container style={styles.container}>
           <Content>
-            <Text style={styles.text}>Rewards Screen</Text>
+            <LeaderBoard {...this.props} />
           </Content>
         </Container>
       </SideDrawer>

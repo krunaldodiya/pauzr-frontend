@@ -4,8 +4,6 @@ import styles from './styles';
 
 export default class ChipView extends React.Component {
   render() {
-    console.log(this.props);
-
     return (
       <ImageBackground
         source={this.props.backgroundImage}
