@@ -20,10 +20,15 @@ export default StyleSheet.create({
   },
   actionsWrapper: {
     position: 'absolute',
-    bottom: 0
+    bottom: 0,
+    width:400,
+    height:100,
+    backgroundColor:"green"
   },
   actionContainer: {
-    position: 'absolute'
+    position: 'absolute',
+    backgroundColor:"green"
+
   },
   actionContent: {
     flex: 1,

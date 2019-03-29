@@ -70,7 +70,7 @@ export default class FooterTabs extends Component {
               alignItems: 'center'
             }}
           >
-            <MidBtn
+            <MidBtn {...this.props}
               navigation={navigation}
               actionSize={30}
               icon={<Icon name="pause" color="#ffffff" size={15} style={{ color: '#ffffff' }} />}
