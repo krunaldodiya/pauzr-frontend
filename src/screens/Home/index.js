@@ -29,7 +29,7 @@ class Home extends React.Component {
     return (
       <SideDrawer {...this.props}>
         <Slider {...this.props} />
-        
+
         <TopBrands {...this.props} />
         <BestOffers {...this.props} />
       </SideDrawer>

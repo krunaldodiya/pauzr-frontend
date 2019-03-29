@@ -9,50 +9,51 @@ class Slider extends React.Component {
   showData(data, navigation) {
     return data.map(item => {
       return (
-        <ChipView
-          style={{ borderRadius: 13 }}
-          height={200}
-          width={"100%"}
-          slideKey={item.id}
-          backgroundColor={"transparent"}
-          backgroundImage={{ uri: `${httpUrl}/storage/${item.image}` }}
-          chipConfig={{
-            style: { borderRadius: 25 },
-            left: {
-              height: 50,
-              width: 50,
-              fallbackColor: '#000000',
-              bottom: 50,
-              left: -25
-            },
-            right: {
-              height: 50,
-              width: 50,
-              fallbackColor: '#000000',
-              bottom: 50,
-              right: -25
-            }
-          }}
-        >
-          <TouchableOpacity
-            onPress={() => navigation.navigate('Test')}
-            style={{
-              flex: 1,
-              padding: 10
+        <View style={{ flex: 1 }} key={item.id}>
+          <ChipView
+            style={{ borderRadius: 13 }}
+            height={200}
+            width={'100%'}
+            backgroundColor={'transparent'}
+            backgroundImage={{ uri: `${httpUrl}/storage/${item.image}` }}
+            chipConfig={{
+              style: { borderRadius: 25 },
+              left: {
+                height: 50,
+                width: 50,
+                fallbackColor: '#000000',
+                bottom: 50,
+                left: -25
+              },
+              right: {
+                height: 50,
+                width: 50,
+                fallbackColor: '#000000',
+                bottom: 50,
+                right: -25
+              }
             }}
           >
-            <Text
-              numberOfLines={3}
+            <TouchableOpacity
+              onPress={() => navigation.navigate('Test')}
               style={{
-                color: '#0fff00',
-                fontSize: 24,
-                fontFamily: theme.fonts.TitilliumWebSemiBold
+                flex: 1,
+                padding: 10
               }}
             >
-              {item.title}
-            </Text>
-          </TouchableOpacity>
-        </ChipView>
+              <Text
+                numberOfLines={3}
+                style={{
+                  color: '#0fff00',
+                  fontSize: 24,
+                  fontFamily: theme.fonts.TitilliumWebSemiBold
+                }}
+              >
+                {item.title}
+              </Text>
+            </TouchableOpacity>
+          </ChipView>
+        </View>
       );
     });
   }

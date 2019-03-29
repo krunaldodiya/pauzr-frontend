@@ -11,15 +11,15 @@ export default class BottomNav extends Component {
       height: 70
     };
   }
+
   _handleProfile(isOpen) {
     if (isOpen) {
-      Alert.alert('if true');
       this.setState({ isOpen: false, height: 400 });
     } else if (!isOpen) {
-      Alert.alert('if false');
       this.setState({ isOpen: true, height: 70 });
     }
   }
+
   render() {
     const { navigation } = this.props;
 

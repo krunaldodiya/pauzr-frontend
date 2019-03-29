@@ -3,10 +3,6 @@ import { View, ImageBackground } from 'react-native';
 import styles from './styles';
 
 export default class ChipView extends React.Component {
-  constructor(props) {
-    super(props);
-    let { height, width, backgroundColor, color, chipConfig, backgroundImage, key } = this.props;
-  }
   render() {
     return (
       <ImageBackground
@@ -19,11 +15,9 @@ export default class ChipView extends React.Component {
           style={[
             styles.content,
             {
-              height: this.props.height,
-              width: this.props.width,
-              backgroundColor: this.props.backgroundColor,
-              color: this.props.color,
-              
+              height: 200,
+              width: '100%',
+              color: this.props.color
             },
             { ...this.props.style }
           ]}
@@ -32,11 +26,11 @@ export default class ChipView extends React.Component {
             style={[
               styles.cardCutLeft,
               {
-                height: this.props.chipConfig.left.size,
-                width: this.props.chipConfig.left.size,
-                backgroundColor: this.props.chipConfig.left.fallbackColor,
-                bottom: this.props.chipConfig.left.bottom,
-                left: this.props.chipConfig.left.left,
+                height: 50,
+                width: 50,
+                backgroundColor: '#000',
+                bottom: 50,
+                left: -25,
                 borderRadius: 10
               },
               { ...this.props.chipConfig.style }
@@ -46,12 +40,11 @@ export default class ChipView extends React.Component {
             style={[
               styles.cardCutRight,
               {
-                height: this.props.chipConfig.right.size,
-                width: this.props.chipConfig.right.size,
-                backgroundColor: this.props.chipConfig.left.fallbackColor,
-                bottom: this.props.chipConfig.right.bottom,
-                right: this.props.chipConfig.right.right,
-                
+                height: 50,
+                width: 50,
+                backgroundColor: '#000',
+                bottom: 50,
+                right: -25
               },
               { ...this.props.chipConfig.style }
             ]}
