@@ -6,7 +6,6 @@ export default class MidBtn extends React.Component {
     super(props);
 
     this.activation = new Animated.Value(0);
-
     this.state = {
       totalCount: false,
       active: false
@@ -217,7 +216,9 @@ const Styles = {
   container: {
     flex: 1,
     alignItems: 'center',
-    justifyContent: 'center'
+    justifyContent: 'center',
+    backgroundColor:"red",
+    height:100,
   },
   toggleButton: {
     elevation: 10,

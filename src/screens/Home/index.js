@@ -1,10 +1,12 @@
 import { Spinner, View } from 'native-base';
 import React from 'react';
+import { Text } from 'react-native';
 import BestOffers from '../../components/BestOffers';
 import SideDrawer from '../../components/SideDrawer';
 import Slider from '../../components/Slider';
 import TopBrands from '../../components/TopBrands';
 import ChipView from '../../components/UIAssets/ChipView';
+import styles from './styles';
 
 class Home extends React.Component {
   constructor(props) {
@@ -28,6 +30,10 @@ class Home extends React.Component {
 
     return (
       <SideDrawer {...this.props}>
+        <View style={styles.greeting}>
+          <Text style={styles.greetingSmall}>Welcome</Text>
+          <Text style={styles.greetingBig}>SHIVANSHU</Text>
+        </View>
         <Slider {...this.props} />
 
         <TopBrands {...this.props} />

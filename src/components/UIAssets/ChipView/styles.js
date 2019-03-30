@@ -4,13 +4,13 @@ export default StyleSheet.create({
   container: {
     padding: 6,
     flex: 1,
-    margin:"auto",
+    margin: 'auto'
   },
   cardCutLeft: {
     elevation: 3,
     zIndex: 3,
     position: 'absolute',
-    backgroundColor:"green",
+    backgroundColor: 'green'
   },
   cardCutRight: {
     elevation: 3,
@@ -19,8 +19,8 @@ export default StyleSheet.create({
   },
   content: {
     flex: 1,
-    elevation: 2,
-    zIndex: 2,
-    padding:20,
+    zIndex: 0,
+    elevation: 0,
+    padding: 20
   }
 });

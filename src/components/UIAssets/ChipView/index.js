@@ -8,16 +8,17 @@ export default class ChipView extends React.Component {
       <ImageBackground
         source={this.props.backgroundImage}
         resizeMode="stretch"
-        style={styles.container}
+        style={[styles.container,{borderRadius:20},this.props.style]}
         key={this.props.slideKey}
       >
         <View
           style={[
             styles.content,
             {
-              height: 200,
-              width: '100%',
-              color: this.props.color
+              height: this.props.height,
+              width: this.props.width,
+              color: this.props.color,
+              backgroundColor:this.props.backgroundColor,
             },
             { ...this.props.style }
           ]}
@@ -26,12 +27,12 @@ export default class ChipView extends React.Component {
             style={[
               styles.cardCutLeft,
               {
-                height: 50,
-                width: 50,
-                backgroundColor: '#000',
-                bottom: 50,
-                left: -25,
-                borderRadius: 10
+                height: this.props.chipConfig.left.size,
+                width: this.props.chipConfig.left.size,
+                backgroundColor: this.props.chipConfig.left.fallbackColor,
+                bottom: this.props.chipConfig.left.bottom,
+                left: this.props.chipConfig.left.left,
+      
               },
               { ...this.props.chipConfig.style }
             ]}
@@ -40,11 +41,11 @@ export default class ChipView extends React.Component {
             style={[
               styles.cardCutRight,
               {
-                height: 50,
-                width: 50,
-                backgroundColor: '#000',
-                bottom: 50,
-                right: -25
+                height: this.props.chipConfig.right.size,
+                width: this.props.chipConfig.right.size,
+                backgroundColor: this.props.chipConfig.right.fallbackColor,
+                bottom: this.props.chipConfig.right.bottom,
+                right: this.props.chipConfig.right.right,
               },
               { ...this.props.chipConfig.style }
             ]}

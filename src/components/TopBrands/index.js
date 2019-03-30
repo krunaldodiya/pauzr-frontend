@@ -1,7 +1,7 @@
 import { Text, View } from 'native-base';
 import React from 'react';
-import { Image, ScrollView } from 'react-native';
-import theme from '../../libs/theme';
+import { ScrollView } from 'react-native';
+import ChipView from '../../components/UIAssets/ChipView';
 import { httpUrl } from '../../libs/vars';
 import styles from './styles';
 
@@ -9,21 +9,29 @@ class TopBrands extends React.Component {
   showData(data) {
     return data.map(item => {
       return (
-        <View style={{ margin: 5, padding: 5, borderWidth: 1, borderColor: 'white' }} key={item.id}>
-          <Image
-            source={{ uri: `${httpUrl}/storage/${item.logo}` }}
-            style={{ width: 150, flex: 1 }}
-          />
-          <Text
-            numberOfLines={1}
-            style={{
-              color: 'white',
-              fontFamily: theme.fonts.TitilliumWebRegular,
-              fontSize: 14
+        <View style={{ margin: 8, flex: 1 }} key={item.id}>
+          <ChipView
+            style={{ borderRadius: 13 }}
+            height={100}
+            width={100 * 1.618}
+            backgroundColor={'transparent'}
+            backgroundImage={{ uri: `${httpUrl}/storage/${item.logo}` }}
+            chipConfig={{
+              style: { borderRadius: 12.5 },
+              left: {
+                size: 25,
+                fallbackColor: '#000',
+                bottom: 30,
+                left: -12.5
+              },
+              right: {
+                size: 25,
+                fallbackColor: '#000',
+                bottom: 30,
+                right: -12.5
+              }
             }}
-          >
-            {item.name}
-          </Text>
+          />
         </View>
       );
     });
