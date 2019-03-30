@@ -20,13 +20,13 @@ class Home extends React.Component {
   render() {
     const { loading } = this.props;
 
-    if (loading.effects.home.getInitialData) {
-      return (
-        <View style={{ flex: 1, justifyContent: 'center' }}>
-          <Spinner size="small" color="#000" />
-        </View>
-      );
-    }
+    // if (loading.effects.home.getInitialData) {
+    //   return (
+    //     <View style={{ flex: 1, justifyContent: 'center' }}>
+    //       <Spinner size="small" color="#000" />
+    //     </View>
+    //   );
+    // }
 
     return (
       <SideDrawer {...this.props}>
