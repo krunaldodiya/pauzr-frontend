@@ -52,6 +52,7 @@ class FooterTabs extends React.PureComponent {
     const { onPress } = this;
     const { tabs, value } = this.props;
     return (
+<<<<<<< HEAD
       <View style={styles.container}>
         {tabs.map((tab, key) => {
           const tabWidth = (width - 40) / tabs.length;
@@ -99,6 +100,23 @@ class FooterTabs extends React.PureComponent {
           );
         })}
       </View>
+=======
+      <Footer style={styles.container}>
+        <FooterTab style={styles.footer}>
+          <Button style={styles.icon} onPress={() => navigation.replace('Home')}>
+            <Text>Home</Text>
+          </Button>
+
+          <Button style={styles.icon} onPress={() => navigation.replace('Timer')}>
+            <Text>Timer</Text>
+          </Button>
+
+          <Button style={styles.icon} onPress={() => navigation.replace('Rewards')}>
+            <Text>Rewards</Text>
+          </Button>
+        </FooterTab>
+      </Footer>
+>>>>>>> 6d7e9b3aefea79153f60342f26545d16ed0e32a7
     );
   }
 }

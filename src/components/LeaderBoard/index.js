@@ -195,7 +195,44 @@ class LeaderBoard extends React.Component {
     ];
 
     return (
-      <View style={{ flex: 1 }}>
+      <View style={{ flex: 1, backgroundColor: '#000' }}>
+        <View
+          style={{
+            flexDirection: 'row'
+          }}
+        >
+          <View
+            style={{ flex: 1, padding: 10, borderTopLeftRadius: 20, backgroundColor: 'cyan' }}
+            first
+          >
+            <Text
+              style={{
+                textAlign: 'center',
+                fontSize: 18,
+                fontFamily: theme.fonts.TitilliumWebRegular
+              }}
+            >
+              My Profession
+            </Text>
+          </View>
+
+          <View
+            style={{ flex: 1, padding: 10, borderTopRightRadius: 20, backgroundColor: 'white' }}
+            second
+            active
+          >
+            <Text
+              style={{
+                textAlign: 'center',
+                fontSize: 18,
+                fontFamily: theme.fonts.TitilliumWebRegular
+              }}
+            >
+              All Profession
+            </Text>
+          </View>
+        </View>
+
         <View
           style={{
             flexDirection: 'row',
