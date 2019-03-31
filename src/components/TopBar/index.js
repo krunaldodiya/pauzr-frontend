@@ -20,7 +20,7 @@ const TopBar = props => {
       </View>
 
       <View style={{ flex: 1, alignItems: 'flex-end' }}>
-        <TouchableOpacity onPress={() => navigation.push('EditProfile')}>
+        <TouchableOpacity onPress={() => navigation.push('Timer')}>
           <Image
             style={styles.avatar}
             source={require('../../../assets/images/Profile/photo.jpg')}

@@ -72,7 +72,7 @@ class FooterTabs extends React.PureComponent {
             extrapolate: 'clamp'
           });
           return (
-            <React.Fragment {...{ key } }>
+            <React.Fragment {...{ key }}>
               <TouchableWithoutFeedback onPress={() => onPress(key)}>
                 <Animated.View style={[styles.tab, { opacity }]}>
                   <Icon name={tab.name} color="black" size={25} />
